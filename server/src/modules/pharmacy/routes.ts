@@ -179,6 +179,8 @@ pharmacyRouter.get('/prescriptions', requirePermission('pharmacy.view'), async (
       patientName,
       uhid: patients.uhid,
       phone: patients.phone,
+      gender: patients.gender,
+      dob: patients.dob,
       allergies: patients.allergies,
       doctorName: doctors.name,
     })

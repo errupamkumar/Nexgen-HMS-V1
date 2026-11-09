@@ -1,0 +1,89 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1200px; }
+  .tier { display: grid; grid-template-columns: 150px 1fr; gap: 18px; align-items: stretch; }
+  .tier + .tier { margin-top: 10px; }
+  .tier > * { min-width: 0; }
+  .side { display: flex; flex-direction: column; justify-content: center; }
+  .side b { font-size: 15px; }
+  .side span { font-size: 12px; color: var(--muted); }
+  .clients { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .client { display: flex; gap: 12px; align-items: center; }
+  .client b { display: block; font-size: 14px; }
+  .client span { font-size: 12px; color: var(--muted); }
+  .down { display: grid; grid-template-columns: 150px 1fr; gap: 18px; height: 28px; }
+  .down .arrow { gap: 8px; font-size: 12px; font-weight: 600; color: var(--muted); }
+  .api { border: 2px solid var(--brand); background: linear-gradient(180deg, #f0fdfa, #fff); }
+  .pipe { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; row-gap: 8px; }
+  .pipe .pill { font-size: 11px; padding: 5px 9px; }
+  .pipe .sep { color: #94a3b8; font-size: 14px; }
+  .mods { margin-top: 14px; display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+  .mod { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 6px; border-radius: 12px; background: #fff; border: 1px solid var(--line); font-size: 12px; font-weight: 600; text-align: center; }
+  .mod .ic { width: 30px; height: 30px; border-radius: 9px; }
+  .mod .ic svg { width: 16px; height: 16px; }
+  .dbrow { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; }
+  .db { display: flex; gap: 14px; align-items: center; }
+  .db b { font-size: 15px; display: block; }
+  .db span { font-size: 12px; color: var(--muted); }
+  .ext { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+</style></head>
+<body><div id="d">
+  <h1 class="t">System architecture</h1>
+  <p class="s">One stateless API serves three audiences. Every request is authenticated, tenant-scoped, licence- and permission-checked, validated and audited.</p>
+  <div style="height:22px"></div>
+
+  <div class="tier">
+    <div class="side"><b>Clients</b><span>React 19 SPA · Vite · Tailwind 4</span></div>
+    <div class="clients">
+      <div class="card client"><div class="ic t-brand"><i data-icon="Hospital"></i></div><div><b>Staff workspace</b><span>Reception · doctors · nurses · pharmacy · lab · accounts · admin</span></div></div>
+      <div class="card client"><div class="ic t-sky"><i data-icon="Smartphone"></i></div><div><b>Patient portal</b><span>Self-booking, prescriptions, lab reports, bills</span></div></div>
+      <div class="card client"><div class="ic t-violet"><i data-icon="Crown"></i></div><div><b>Platform console</b><span>Tenants, plans, module licensing, MRR</span></div></div>
+    </div>
+  </div>
+  <div class="down"><span></span><div class="arrow"><i data-icon="ArrowDown"></i> HTTPS · JSON · JWT (15 min) + rotating httpOnly refresh cookie</div></div>
+
+  <div class="tier">
+    <div class="side"><b>API</b><span>Node 22 · Express 5 · TypeScript · Zod</span></div>
+    <div class="card api">
+      <div class="lbl" style="margin-bottom:8px">Request pipeline</div>
+      <div class="pipe">
+        <span class="pill t-slate"><i data-icon="Shield"></i>Helmet · CORS</span><span class="sep">›</span>
+        <span class="pill t-slate"><i data-icon="Gauge"></i>Rate limits</span><span class="sep">›</span>
+        <span class="pill t-indigo"><i data-icon="KeyRound"></i>Authenticate</span><span class="sep">›</span>
+        <span class="pill t-brand"><i data-icon="Building2"></i>Tenant context</span><span class="sep">›</span>
+        <span class="pill t-amber"><i data-icon="Layers"></i>Module licence</span><span class="sep">›</span>
+        <span class="pill t-rose"><i data-icon="UserCog"></i>Permission</span><span class="sep">›</span>
+        <span class="pill t-sky"><i data-icon="ListChecks"></i>Validate</span><span class="sep">›</span>
+        <span class="pill t-green"><i data-icon="ScrollText"></i>Service + audit</span>
+      </div>
+      <div class="mods">
+        <div class="mod"><div class="ic t-brand"><i data-icon="Users"></i></div>Patients</div>
+        <div class="mod"><div class="ic t-sky"><i data-icon="CalendarDays"></i></div>Appointments</div>
+        <div class="mod"><div class="ic t-indigo"><i data-icon="Stethoscope"></i></div>OPD / EMR</div>
+        <div class="mod"><div class="ic t-green"><i data-icon="Receipt"></i></div>Billing</div>
+        <div class="mod"><div class="ic t-amber"><i data-icon="Pill"></i></div>Pharmacy</div>
+        <div class="mod"><div class="ic t-violet"><i data-icon="FlaskConical"></i></div>Laboratory</div>
+        <div class="mod"><div class="ic t-rose"><i data-icon="BedDouble"></i></div>In-patient</div>
+        <div class="mod"><div class="ic t-slate"><i data-icon="ChartColumn"></i></div>Reports</div>
+        <div class="mod"><div class="ic t-slate"><i data-icon="MessageSquare"></i></div>Comms</div>
+        <div class="mod"><div class="ic t-slate"><i data-icon="Globe"></i></div>Portal</div>
+        <div class="mod"><div class="ic t-slate"><i data-icon="ClipboardList"></i></div>Masters</div>
+        <div class="mod"><div class="ic t-slate"><i data-icon="Settings"></i></div>Settings</div>
+        <div class="mod"><div class="ic t-slate"><i data-icon="ShieldCheck"></i></div>Users &amp; roles</div>
+        <div class="mod"><div class="ic t-slate"><i data-icon="Crown"></i></div>Platform</div>
+      </div>
+    </div>
+  </div>
+  <div class="down"><span></span><div class="arrow"><i data-icon="ArrowDown"></i> Drizzle ORM · mysql2 pool · transactions with row locks</div></div>
+
+  <div class="tier">
+    <div class="side"><b>Data</b><span>MySQL 8 · 32 tables</span></div>
+    <div class="dbrow">
+      <div class="card db"><div class="ic t-brand"><i data-icon="Database"></i></div><div><b>Shared schema, row-level tenancy</b><span>tenant_id on every business row · composite indexes lead with tenant_id · sequential per-tenant numbering</span></div></div>
+      <div class="card"><div class="lbl">Integration points (simulated in R1)</div>
+        <div class="ext"><span class="pill"><i data-icon="MessageSquare"></i>SMS</span><span class="pill"><i data-icon="Send"></i>WhatsApp</span><span class="pill"><i data-icon="Mail"></i>Email</span><span class="pill"><i data-icon="CreditCard"></i>Payments</span></div>
+      </div>
+    </div>
+  </div>
+</div></body></html>

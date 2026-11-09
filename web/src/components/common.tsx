@@ -362,8 +362,7 @@ export function PatientChip({ p }: { p: Pick<PatientRow, 'name' | 'uhid' | 'gend
       <div className="min-w-0">
         <p className="truncate text-sm font-medium">{p.name}</p>
         <p className="truncate text-xs text-muted-foreground">
-          {p.uhid} · {age !== null ? `${age}y ` : ''}
-          {genderShort(p.gender)} · {p.phone}
+          {[p.uhid, [age !== null ? `${age}y` : '', genderShort(p.gender)].filter(Boolean).join(' '), p.phone].filter(Boolean).join(' · ')}
         </p>
       </div>
     </div>

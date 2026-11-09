@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1100px; }
+  .layers { margin-top: 22px; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .layer { display: grid; grid-template-columns: 44px 220px 1fr; gap: 14px; align-items: center; padding: 12px 18px; border-radius: 14px; color: #fff; box-shadow: 0 10px 24px -14px #0f172a66; }
+  .layer .ic { width: 38px; height: 38px; background: #ffffff26; color: #fff; }
+  .layer b { font-size: 14.5px; }
+  .layer span { font-size: 12.5px; color: #ffffffd9; }
+  .core { margin-top: 6px; display: flex; gap: 12px; align-items: center; padding: 14px 22px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 700; font-size: 14px; }
+  .core svg { width: 18px; height: 18px; }
+</style></head>
+<body><div id="d">
+  <h1 class="t">Security model — defence in depth</h1>
+  <p class="s">Every request passes each layer in order. A failure at any layer stops it before it reaches patient data.</p>
+  <div class="layers">
+    <div class="layer" style="width:100%;background:#334155"><div class="ic"><i data-icon="Lock"></i></div><b>Transport &amp; headers</b><span>HTTPS · Helmet CSP (script-src 'self') · HSTS · frame protection · CORS allow-list · 1 MB body limit</span></div>
+    <div class="layer" style="width:96%;background:#475569"><div class="ic"><i data-icon="Gauge"></i></div><b>Rate limiting</b><span>Global 600/min · sign-in 20 per account and 500 per IP per 15 min (shared-NAT safe)</span></div>
+    <div class="layer" style="width:92%;background:var(--indigo)"><div class="ic"><i data-icon="KeyRound"></i></div><b>Authentication</b><span>bcrypt · 15-min JWT · rotating httpOnly refresh with replay detection · lockout after 5 failures</span></div>
+    <div class="layer" style="width:88%;background:#0e7490"><div class="ic"><i data-icon="Building2"></i></div><b>Tenant isolation</b><span>tenant_id from the token only · every query scoped · other tenants' ids return 404 · suspended tenants blocked</span></div>
+    <div class="layer" style="width:84%;background:var(--amber)"><div class="ic"><i data-icon="Layers"></i></div><b>Module licensing</b><span>Modules outside the plan rejected by the API (403), not just hidden</span></div>
+    <div class="layer" style="width:80%;background:var(--rose)"><div class="ic"><i data-icon="UserCog"></i></div><b>Permissions (RBAC)</b><span>37 permissions · clinical writes reserved to clinicians · patients see only their own records</span></div>
+    <div class="layer" style="width:76%;background:var(--brand)"><div class="ic"><i data-icon="ListChecks"></i></div><b>Validation &amp; rules</b><span>Zod on every input · server-computed totals · transactional locks</span></div>
+    <div class="core"><i data-icon="ScrollText"></i> Audit trail — every sign-in and every change, with user, time and IP</div>
+  </div>
+</div></body></html>

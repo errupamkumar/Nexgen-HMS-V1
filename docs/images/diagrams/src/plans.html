@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1100px; }
+  .grid { margin-top: 22px; display: grid; grid-template-columns: 1.15fr 1fr 1fr 1fr; gap: 0; background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px -12px #0f172a1f; }
+  .cell { padding: 11px 16px; border-bottom: 1px solid #f1f5f9; font-size: 13px; display: flex; align-items: center; gap: 10px; }
+  .c { justify-content: center; }
+  .plan { flex-direction: column; align-items: flex-start; gap: 2px; padding: 18px 16px 16px; border-bottom: 1px solid var(--line); }
+  .plan b { font-size: 17px; }
+  .plan .price { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin-top: 6px; }
+  .plan .price small { font-size: 12px; font-weight: 500; color: var(--muted); }
+  .plan span { font-size: 12px; color: var(--muted); }
+  .hl { background: linear-gradient(180deg, #f0fdfa, #fff); }
+  .tag { position: absolute; }
+  .yes { width: 22px; height: 22px; border-radius: 999px; background: var(--brand); color: #fff; display: flex; align-items: center; justify-content: center; }
+  .yes svg { width: 14px; height: 14px; stroke-width: 3; }
+  .no { width: 12px; height: 2px; background: #cbd5e1; border-radius: 2px; }
+  .mi { width: 26px; height: 26px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .mi svg { width: 15px; height: 15px; }
+  .plan .badge, .badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 99px; background: var(--brand); color: #fff; margin-left: 6px; vertical-align: middle; }
+</style></head>
+<body><div id="d">
+  <h1 class="t">Plans &amp; module licensing</h1>
+  <p class="s">Modules unlock instantly when a tenant changes plan — or per tenant via platform overrides. Prices are the seeded defaults and fully editable.</p>
+  <div class="grid">
+    <div class="cell plan"><span class="lbl">Module</span></div>
+    <div class="cell plan"><b>Starter</b><span>Single &amp; small clinics</span><div class="price">₹1,999<small>/mo</small></div><span>Up to 5 users</span></div>
+    <div class="cell plan hl"><b>Professional <span class="badge">POPULAR</span></b><span>Polyclinics + diagnostics</span><div class="price">₹4,999<small>/mo</small></div><span>Up to 25 users</span></div>
+    <div class="cell plan"><b>Enterprise</b><span>Hospitals &amp; nursing homes</span><div class="price">₹9,999<small>/mo</small></div><span>Up to 500 users</span></div>
+
+    <div class="cell"><div class="mi t-brand"><i data-icon="Users"></i></div>Patients &amp; UHID</div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-sky"><i data-icon="CalendarDays"></i></div>Appointments &amp; queue</div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-indigo"><i data-icon="Stethoscope"></i></div>OPD / EMR &amp; e-Rx</div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-green"><i data-icon="Receipt"></i></div>Billing &amp; payments</div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-slate"><i data-icon="ChartColumn"></i></div>Reports &amp; analytics</div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-amber"><i data-icon="Pill"></i></div>Pharmacy &amp; inventory</div><div class="cell c"><div class="no"></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-violet"><i data-icon="FlaskConical"></i></div>Laboratory (LIMS)</div><div class="cell c"><div class="no"></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-slate"><i data-icon="MessageSquare"></i></div>Patient messaging</div><div class="cell c"><div class="no"></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell"><div class="mi t-sky"><i data-icon="Smartphone"></i></div>Patient portal</div><div class="cell c"><div class="no"></div></div><div class="cell c hl"><div class="yes"><i data-icon="Check"></i></div></div><div class="cell c"><div class="yes"><i data-icon="Check"></i></div></div>
+    <div class="cell" style="border:0"><div class="mi t-rose"><i data-icon="BedDouble"></i></div>In-patient (IPD)</div><div class="cell c" style="border:0"><div class="no"></div></div><div class="cell c hl" style="border:0"><div class="no"></div></div><div class="cell c" style="border:0"><div class="yes"><i data-icon="Check"></i></div></div>
+  </div>
+</div></body></html>

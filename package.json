@@ -21,7 +21,9 @@
     "test": "npm run test -w server",
     "typecheck": "npm run typecheck -w server && npm run typecheck -w web",
     "e2e": "node scripts/e2e-smoke.mjs",
-    "qa:ui": "node scripts/ui-qa.mjs"
+    "qa:ui": "node scripts/ui-qa.mjs",
+    "docs:shots": "node scripts/readme-shots.mjs",
+    "docs:diagrams": "node scripts/render-diagrams.mjs"
   },
   "devDependencies": {
     "concurrently": "^10.0.7",

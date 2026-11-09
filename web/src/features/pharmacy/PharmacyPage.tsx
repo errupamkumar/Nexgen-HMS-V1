@@ -6,7 +6,7 @@ import { AlertTriangle, Boxes, PackagePlus, Pill, Plus, ShoppingCart, SlidersHor
 import { Dialog as DialogPrimitive } from 'radix-ui';
 import { api, errMsg } from '@/lib/api';
 import { useAuth } from '@/lib/auth';
-import { addDaysStr, todayIn, useFmt } from '@/lib/format';
+import { addDaysStr, medLabel, todayIn, useFmt } from '@/lib/format';
 import type { Paged, PatientRow, RxItem } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import {
@@ -55,6 +55,8 @@ interface RxQueueRow {
   patientName: string;
   uhid: string;
   phone: string;
+  gender: 'male' | 'female' | 'other';
+  dob: string | null;
   allergies: string[];
   doctorName: string;
   items: (RxItem & { id: number })[];
@@ -159,7 +161,7 @@ function DispenseDialog({ open, onOpenChange, rx }: { open: boolean; onOpenChang
         <DialogBody className="flex flex-col gap-4">
           {rx ? (
             <div className="rounded-lg border bg-muted/30 p-2.5">
-              <PatientChip p={{ name: rx.patientName, uhid: rx.uhid, gender: 'other', dob: null, phone: rx.phone }} />
+              <PatientChip p={{ name: rx.patientName, uhid: rx.uhid, gender: rx.gender, dob: rx.dob, phone: rx.phone }} />
               <p className="mt-1 text-xs text-muted-foreground">Prescribed by {rx.doctorName}</p>
               {rx.allergies.length ? (
                 <p className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-destructive">
@@ -181,7 +183,7 @@ function DispenseDialog({ open, onOpenChange, rx }: { open: boolean; onOpenChang
                     <option value="">{l.label ? 'Not in catalogue — choose substitute or skip' : 'Select medicine…'}</option>
                     {meds.data?.map((md) => (
                       <option key={md.id} value={md.id}>
-                        {md.name} {md.strength ?? ''} — {f.money(md.salePrice)}
+                        {medLabel(md.name, md.strength)} — {f.money(md.salePrice)}
                       </option>
                     ))}
                   </NativeSelect>
@@ -275,7 +277,7 @@ function StockInDialog({ open, onOpenChange, medicine }: { open: boolean; onOpen
               <option value="">Select…</option>
               {meds.data?.map((md) => (
                 <option key={md.id} value={md.id}>
-                  {md.name} {md.strength ?? ''}
+                  {medLabel(md.name, md.strength)}
                 </option>
               ))}
             </NativeSelect>

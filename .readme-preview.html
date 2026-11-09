@@ -1,0 +1,1692 @@
+<!doctype html><html><head><meta charset="utf-8"><base href="file:///D:/SRM Products/nexgen-Medical_v1/nexgen-hms/"><style>/*light */
+.markdown-body {
+  color-scheme: light;
+  /** CSS default easing. Use for hover state changes and micro-interactions. */
+  /** Accelerating motion. Use for elements exiting the viewport (moving off-screen). */
+  /** Smooth acceleration and deceleration. Use for elements moving or morphing within the viewport. */
+  /** Decelerating motion. Use for elements entering the viewport or appearing on screen. */
+  /** Constant motion with no acceleration. Use for continuous animations like progress bars or loaders. */
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  font-weight: 400;
+  color: #1f2328;
+  background-color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  text-decoration: underline;
+  text-underline-offset: .2rem;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body h1:hover .anchor .octicon-link:before,
+.markdown-body h2:hover .anchor .octicon-link:before,
+.markdown-body h3:hover .anchor .octicon-link:before,
+.markdown-body h4:hover .anchor .octicon-link:before,
+.markdown-body h5:hover .anchor .octicon-link:before,
+.markdown-body h6:hover .anchor .octicon-link:before {
+  width: 16px;
+  height: 16px;
+  content: ' ';
+  display: inline-block;
+  background-color: currentColor;
+  -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+  mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' version='1.1' aria-hidden='true'><path fill-rule='evenodd' d='M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z'></path></svg>");
+}
+
+.markdown-body details,
+.markdown-body figcaption,
+.markdown-body figure {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body [hidden] {
+  display: none !important;
+}
+
+.markdown-body a {
+  background-color: rgba(0,0,0,0);
+  color: #0969da;
+  text-decoration: none;
+}
+
+.markdown-body abbr[title] {
+  border-bottom: none;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body dfn {
+  font-style: italic;
+}
+
+.markdown-body h1 {
+  margin: .67em 0;
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 2em;
+  border-bottom: 1px solid #d1d9e0b3;
+}
+
+.markdown-body mark {
+  background-color: #fff8c5;
+  color: #1f2328;
+}
+
+.markdown-body small {
+  font-size: 90%;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body sup {
+  top: -0.5em;
+}
+
+.markdown-body img {
+  border-style: none;
+  max-width: 100%;
+  box-sizing: content-box;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace;
+  font-size: 1em;
+}
+
+.markdown-body figure {
+  margin: 1em 2.5rem;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  overflow: hidden;
+  background: rgba(0,0,0,0);
+  border-bottom: 1px solid #d1d9e0b3;
+  height: .25em;
+  padding: 0;
+  margin: 1.5rem 0;
+  background-color: #d1d9e0;
+  border: 0;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body [type=button],
+.markdown-body [type=reset],
+.markdown-body [type=submit] {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+.markdown-body [type=checkbox],
+.markdown-body [type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body [type=number]::-webkit-inner-spin-button,
+.markdown-body [type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+.markdown-body [type=search]::-webkit-search-cancel-button,
+.markdown-body [type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.markdown-body ::-webkit-input-placeholder {
+  color: inherit;
+  opacity: .54;
+}
+
+.markdown-body ::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  appearance: button;
+  font: inherit;
+}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body ::placeholder {
+  color: #59636e;
+  opacity: 1;
+}
+
+.markdown-body hr::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+  font-variant: tabular-nums;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body a:focus,
+.markdown-body [role=button]:focus,
+.markdown-body input[type=radio]:focus,
+.markdown-body input[type=checkbox]:focus {
+  outline: 2px solid var(--borderColor-accent-emphasis);
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.markdown-body a:focus:not(:focus-visible),
+.markdown-body [role=button]:focus:not(:focus-visible),
+.markdown-body input[type=radio]:focus:not(:focus-visible),
+.markdown-body input[type=checkbox]:focus:not(:focus-visible) {
+  outline: solid 1px rgba(0,0,0,0);
+}
+
+.markdown-body a:focus-visible,
+.markdown-body [role=button]:focus-visible,
+.markdown-body input[type=radio]:focus-visible,
+.markdown-body input[type=checkbox]:focus-visible {
+  outline: 2px solid var(--borderColor-accent-emphasis);
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.markdown-body a:not([class]):focus,
+.markdown-body a:not([class]):focus-visible,
+.markdown-body input[type=radio]:focus,
+.markdown-body input[type=radio]:focus-visible,
+.markdown-body input[type=checkbox]:focus,
+.markdown-body input[type=checkbox]:focus-visible {
+  outline-offset: 0;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 0.25rem;
+  font: 11px ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  line-height: 10px;
+  color: #1f2328;
+  vertical-align: middle;
+  background-color: #f6f8fa;
+  border: solid 1px var(--borderColor-muted);
+  border-bottom-color: var(--borderColor-muted);
+  border-radius: 6px;
+  box-shadow: inset 0 -1px 0 var(--borderColor-muted);
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h2 {
+  font-weight: 600;
+  padding-bottom: .3em;
+  font-size: 1.5em;
+  border-bottom: 1px solid #d1d9e0b3;
+}
+
+.markdown-body h3 {
+  font-weight: 600;
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+
+.markdown-body h5 {
+  font-weight: 600;
+  font-size: .875em;
+}
+
+.markdown-body h6 {
+  font-weight: 600;
+  font-size: .85em;
+  color: #59636e;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: #59636e;
+  border-left: .25em solid #d1d9e0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body tt,
+.markdown-body code,
+.markdown-body samp {
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+  word-wrap: normal;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-body input::-webkit-outer-spin-button,
+.markdown-body input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.markdown-body .mr-2 {
+  margin-right: 0.5rem !important;
+}
+
+.markdown-body::before {
+  display: table;
+  content: "";
+}
+
+.markdown-body::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .absent {
+  color: #d1242f;
+}
+
+.markdown-body .anchor {
+  float: left;
+  padding-right: 0.25rem;
+  margin-left: -20px;
+  line-height: 1;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body details {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #1f2328;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 tt,
+.markdown-body h1 code,
+.markdown-body h2 tt,
+.markdown-body h2 code,
+.markdown-body h3 tt,
+.markdown-body h3 code,
+.markdown-body h4 tt,
+.markdown-body h4 code,
+.markdown-body h5 tt,
+.markdown-body h5 code,
+.markdown-body h6 tt,
+.markdown-body h6 code {
+  padding: 0 .2em;
+  font-size: inherit;
+}
+
+.markdown-body summary h1,
+.markdown-body summary h2,
+.markdown-body summary h3,
+.markdown-body summary h4,
+.markdown-body summary h5,
+.markdown-body summary h6 {
+  display: inline-block;
+}
+
+.markdown-body summary h1 .anchor,
+.markdown-body summary h2 .anchor,
+.markdown-body summary h3 .anchor,
+.markdown-body summary h4 .anchor,
+.markdown-body summary h5 .anchor,
+.markdown-body summary h6 .anchor {
+  margin-left: -40px;
+}
+
+.markdown-body summary h1,
+.markdown-body summary h2 {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.markdown-body ul.no-list,
+.markdown-body ol.no-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.markdown-body ol[type="a s"] {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body ol[type="A s"] {
+  list-style-type: upper-alpha;
+}
+
+.markdown-body ol[type="i s"] {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol[type="I s"] {
+  list-style-type: upper-roman;
+}
+
+.markdown-body ol[type="1"] {
+  list-style-type: decimal;
+}
+
+.markdown-body div>ol:not([type]) {
+  list-style-type: decimal;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 1rem;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 1rem;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #d1d9e0;
+}
+
+.markdown-body table td>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table tr {
+  background-color: #ffffff;
+  border-top: 1px solid #d1d9e0b3;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-body table img {
+  background-color: rgba(0,0,0,0);
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body .emoji {
+  max-width: none;
+  vertical-align: text-top;
+  background-color: rgba(0,0,0,0);
+}
+
+.markdown-body span.frame {
+  display: block;
+  overflow: hidden;
+}
+
+.markdown-body span.frame>span {
+  display: block;
+  float: left;
+  width: auto;
+  padding: 7px;
+  margin: 13px 0 0;
+  overflow: hidden;
+  border: 1px solid #d1d9e0;
+}
+
+.markdown-body span.frame span img {
+  display: block;
+  float: left;
+}
+
+.markdown-body span.frame span span {
+  display: block;
+  padding: 5px 0 0;
+  clear: both;
+  color: #1f2328;
+}
+
+.markdown-body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-center>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.markdown-body span.align-center span img {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.markdown-body span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body span.align-right>span {
+  display: block;
+  margin: 13px 0 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body span.align-right span img {
+  margin: 0;
+  text-align: right;
+}
+
+.markdown-body span.float-left {
+  display: block;
+  float: left;
+  margin-right: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-left span {
+  margin: 13px 0 0;
+}
+
+.markdown-body span.float-right {
+  display: block;
+  float: right;
+  margin-left: 13px;
+  overflow: hidden;
+}
+
+.markdown-body span.float-right>span {
+  display: block;
+  margin: 13px auto 0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.markdown-body code,
+.markdown-body tt {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: #818b981f;
+  border-radius: 6px;
+}
+
+.markdown-body code br,
+.markdown-body tt br {
+  display: none;
+}
+
+.markdown-body del code {
+  text-decoration: inherit;
+}
+
+.markdown-body samp {
+  font-size: 85%;
+}
+
+.markdown-body pre code {
+  font-size: 100%;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  word-break: normal;
+  white-space: pre;
+  background: rgba(0,0,0,0);
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 1rem;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 1rem;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  color: #1f2328;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.markdown-body pre code,
+.markdown-body pre tt {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+}
+
+.markdown-body .csv-data td,
+.markdown-body .csv-data th {
+  padding: 5px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 1;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.markdown-body .csv-data .blob-num {
+  padding: 10px 0.5rem 9px;
+  text-align: right;
+  background: #ffffff;
+  border: 0;
+}
+
+.markdown-body .csv-data tr {
+  border-top: 0;
+}
+
+.markdown-body .csv-data th {
+  font-weight: 600;
+  background: #f6f8fa;
+  border-top: 0;
+}
+
+.markdown-body [data-footnote-ref]::before {
+  content: "[";
+}
+
+.markdown-body [data-footnote-ref]::after {
+  content: "]";
+}
+
+.markdown-body .footnotes {
+  font-size: 12px;
+  color: #59636e;
+  border-top: 1px solid #d1d9e0;
+}
+
+.markdown-body .footnotes ol {
+  padding-left: 1rem;
+}
+
+.markdown-body .footnotes ol ul {
+  display: inline-block;
+  padding-left: 1rem;
+  margin-top: 1rem;
+}
+
+.markdown-body .footnotes li {
+  position: relative;
+}
+
+.markdown-body .footnotes li:target::before {
+  position: absolute;
+  top: calc(0.5rem*-1);
+  right: calc(0.5rem*-1);
+  bottom: calc(0.5rem*-1);
+  left: calc(1.5rem*-1);
+  pointer-events: none;
+  content: "";
+  border: 2px solid #0969da;
+  border-radius: 6px;
+}
+
+.markdown-body .footnotes li:target {
+  color: #1f2328;
+}
+
+.markdown-body .footnotes .data-footnote-backref g-emoji {
+  font-family: monospace;
+}
+
+.markdown-body .pl-c {
+  color: #59636e;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0550ae;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #6639ba;
+}
+
+.markdown-body .pl-smi,
+.markdown-body .pl-s .pl-s1 {
+  color: #1f2328;
+}
+
+.markdown-body .pl-ent {
+  color: #0550ae;
+}
+
+.markdown-body .pl-k {
+  color: #cf222e;
+}
+
+.markdown-body .pl-s,
+.markdown-body .pl-pds,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sre,
+.markdown-body .pl-sr .pl-sra {
+  color: #0a3069;
+}
+
+.markdown-body .pl-v,
+.markdown-body .pl-smw {
+  color: #953800;
+}
+
+.markdown-body .pl-bu {
+  color: #82071e;
+}
+
+.markdown-body .pl-ii {
+  color: var(--fgColor-danger);
+  background-color: var(--bgColor-danger-muted);
+}
+
+.markdown-body .pl-c2 {
+  color: #f6f8fa;
+  background-color: #cf222e;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  font-weight: bold;
+  color: #116329;
+}
+
+.markdown-body .pl-ml {
+  color: #3b2300;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  font-weight: bold;
+  color: #0550ae;
+}
+
+.markdown-body .pl-mi {
+  font-style: italic;
+  color: #1f2328;
+}
+
+.markdown-body .pl-mb {
+  font-weight: bold;
+  color: #1f2328;
+}
+
+.markdown-body .pl-md {
+  color: #82071e;
+  background-color: #ffebe9;
+}
+
+.markdown-body .pl-mi1 {
+  color: #116329;
+  background-color: #dafbe1;
+}
+
+.markdown-body .pl-mc {
+  color: #953800;
+  background-color: #ffd8b5;
+}
+
+.markdown-body .pl-mi2 {
+  color: #d1d9e0;
+  background-color: #0550ae;
+}
+
+.markdown-body .pl-mdr {
+  font-weight: bold;
+  color: #8250df;
+}
+
+.markdown-body .pl-ba {
+  color: #59636e;
+}
+
+.markdown-body .pl-sg {
+  color: #818b98;
+}
+
+.markdown-body .pl-corl {
+  text-decoration: underline;
+  color: #0a3069;
+}
+
+.markdown-body [role=button]:focus:not(:focus-visible),
+.markdown-body [role=tabpanel][tabindex="0"]:focus:not(:focus-visible),
+.markdown-body button:focus:not(:focus-visible),
+.markdown-body summary:focus:not(:focus-visible),
+.markdown-body a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+.markdown-body [tabindex="0"]:focus:not(:focus-visible),
+.markdown-body details-dialog:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.markdown-body g-emoji {
+  display: inline-block;
+  min-width: 1ch;
+  font-family: "Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1em;
+  font-style: normal !important;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: -0.075em;
+}
+
+.markdown-body g-emoji img {
+  width: 1em;
+  height: 1em;
+}
+
+.markdown-body a:has(>p,>div,>pre,>blockquote) {
+  display: block;
+}
+
+.markdown-body a:has(>p,>div,>pre,>blockquote):not(:has(.snippet-clipboard-content,>pre)) {
+  width: fit-content;
+}
+
+.markdown-body a:has(>p,>div,>pre,>blockquote):has(.snippet-clipboard-content,>pre):focus-visible {
+  outline: 2px solid var(--borderColor-accent-emphasis);
+  outline-offset: 2px;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item label {
+  font-weight: 400;
+}
+
+.markdown-body .task-list-item.enabled label {
+  cursor: pointer;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 0.25rem;
+}
+
+.markdown-body .task-list-item .handle {
+  display: none;
+}
+
+.markdown-body .task-list-item-checkbox {
+  margin: 0 .2em .25em -1.4em;
+  vertical-align: middle;
+}
+
+.markdown-body ul:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.markdown-body ol:dir(rtl) .task-list-item-checkbox {
+  margin: 0 -1.6em .25em .2em;
+}
+
+.markdown-body .contains-task-list:hover .task-list-item-convert-container,
+.markdown-body .contains-task-list:focus-within .task-list-item-convert-container {
+  display: block;
+  width: auto;
+  height: 24px;
+  overflow: visible;
+  clip-path: none;
+}
+
+.markdown-body ::-webkit-calendar-picker-indicator {
+  filter: invert(50%);
+}
+
+.markdown-body .markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  color: inherit;
+  border-left: .25em solid #d1d9e0;
+}
+
+.markdown-body .markdown-alert>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body .markdown-alert>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body .markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1;
+}
+
+.markdown-body .markdown-alert.markdown-alert-note {
+  border-left-color: #0969da;
+}
+
+.markdown-body .markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: #0969da;
+}
+
+.markdown-body .markdown-alert.markdown-alert-important {
+  border-left-color: #8250df;
+}
+
+.markdown-body .markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: #8250df;
+}
+
+.markdown-body .markdown-alert.markdown-alert-warning {
+  border-left-color: #9a6700;
+}
+
+.markdown-body .markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: #9a6700;
+}
+
+.markdown-body .markdown-alert.markdown-alert-tip {
+  border-left-color: #1a7f37;
+}
+
+.markdown-body .markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: #1a7f37;
+}
+
+.markdown-body .markdown-alert.markdown-alert-caution {
+  border-left-color: #cf222e;
+}
+
+.markdown-body .markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: #d1242f;
+}
+
+.markdown-body>*:first-child>.heading-element:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .highlight pre:has(+.zeroclipboard-container) {
+  min-height: 52px;
+}
+
+ body{background:#fff} .markdown-body{box-sizing:border-box;max-width:1012px;margin:0 auto;padding:45px}</style></head><body><article class="markdown-body"><p align="center">
+  <img src="docs/images/diagrams/banner.png" alt="NexGen HMS — run your entire hospital from one beautiful workspace" width="100%">
+</p><p align="center">
+  <img src="https://img.shields.io/badge/Node.js-22-339933?logo=nodedotjs&logoColor=white" alt="Node 22">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" alt="React 19">
+  <img src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white" alt="TypeScript strict">
+  <img src="https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql&logoColor=white" alt="MySQL 8">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind 4">
+  <img src="https://img.shields.io/badge/API_tests-86%2F86_passing-0d9488" alt="86 of 86 API tests passing">
+  <img src="https://img.shields.io/badge/UI_QA-38%2F38_screens-0d9488" alt="38 of 38 screens clean">
+</p><p align="center">
+  <b>Multi-tenant cloud software for clinics, polyclinics, diagnostic centres and hospitals.</b><br>
+  One codebase · switch modules on per plan · configure everything per hospital, live, without code.
+</p><p align="center">
+  <a href="#-quick-start">Quick start</a> ·
+  <a href="#-step-by-step-user-guide">User guide</a> ·
+  <a href="#-features-at-a-glance">Features</a> ·
+  <a href="#%EF%B8%8F-how-it-is-built">Architecture</a> ·
+  <a href="#-quality">Quality</a> ·
+  <a href="#-documentation">Docs</a>
+</p><hr>
+<h2>📑 Contents</h2>
+<ol>
+<li><a href="#-features-at-a-glance">Features at a glance</a></li>
+<li><a href="#-quick-start">Quick start</a> — installed and running in 5 steps</li>
+<li><a href="#-demo-accounts">Demo accounts</a></li>
+<li><a href="#-step-by-step-user-guide">Step-by-step user guide</a> — 16 steps with screenshots</li>
+<li><a href="#%EF%B8%8F-how-it-is-built">How it is built</a> — architecture, journey, security, roles, plans, configuration, data model</li>
+<li><a href="#-quality">Quality</a></li>
+<li><a href="#-commands">Commands</a> · <a href="#-production-deployment">Production deployment</a> · <a href="#-project-structure">Project structure</a></li>
+<li><a href="#%EF%B8%8F-troubleshooting">Troubleshooting</a> · <a href="#%EF%B8%8F-roadmap">Roadmap</a> · <a href="#-documentation">Documentation</a></li>
+</ol>
+<hr>
+<h2>✨ Features at a glance</h2>
+<table>
+<tr>
+<td width="33%" valign="top"><h3>🗓️ Front office</h3>
+<ul>
+<li>UHID registration, custom fields, duplicate warning</li>
+<li>Slot booking from doctors&#39; weekly schedules</li>
+<li>Walk-ins, daily tokens, live queue board</li>
+<li>Check-in, reschedule, cancel, no-show</li>
+</ul>
+</td>
+<td width="33%" valign="top"><h3>🩺 Clinical</h3>
+<ul>
+<li>Consultation workspace with vitals and live BMI</li>
+<li>ICD-10 diagnoses, e-prescription from the catalogue</li>
+<li>Lab orders, previous visits, repeat prescription</li>
+<li>Finalise-and-lock, branded printouts</li>
+</ul>
+</td>
+<td width="33%" valign="top"><h3>💳 Billing</h3>
+<ul>
+<li>Server-computed invoices with GST per line</li>
+<li>Partial payments, receipts, refunds, cancel rules</li>
+<li>Dues tracking, collections by payment mode</li>
+<li>Printable tax invoice, CSV export</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td valign="top"><h3>💊 Pharmacy</h3>
+<ul>
+<li>Batch stock-in with expiry and prices</li>
+<li>Earliest-expiry-first (FEFO) dispensing</li>
+<li>Low-stock and near-expiry alerts</li>
+<li>Stock ledger and adjustments</li>
+</ul>
+</td>
+<td valign="top"><h3>🧪 Laboratory</h3>
+<ul>
+<li>Test catalogue with reference ranges</li>
+<li>Sample → results → verify workflow</li>
+<li>Automatic <strong>High / Low</strong> flags</li>
+<li>Printable lab report</li>
+</ul>
+</td>
+<td valign="top"><h3>🛏️ In-patient</h3>
+<ul>
+<li>Live colour-coded bed board</li>
+<li>Admission with deposit, running bill</li>
+<li>Progress / nursing notes, bed transfer</li>
+<li>Discharge with bed-day billing and summary</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td valign="top"><h3>📊 Insight</h3>
+<ul>
+<li>Live dashboard and KPIs</li>
+<li>Collections, doctor productivity, peak hours</li>
+<li>Pharmacy and lab analytics</li>
+<li>Full audit trail</li>
+</ul>
+</td>
+<td valign="top"><h3>📱 Patient portal</h3>
+<ul>
+<li>Online self-booking (when the clinic allows it)</li>
+<li>Prescriptions, verified lab reports, bills</li>
+<li>Cancel upcoming visits</li>
+</ul>
+</td>
+<td valign="top"><h3>☁️ SaaS platform</h3>
+<ul>
+<li>Tenants, plans, module licensing</li>
+<li>14-day trial self-signup</li>
+<li>Per-tenant branding and settings</li>
+<li>Roles and permission matrix</li>
+</ul>
+</td>
+</tr>
+</table><p align="center">
+  <img src="docs/images/screens/03-dashboard.jpg" alt="Hospital dashboard" width="49%">
+  <img src="docs/images/screens/08-consultation.jpg" alt="Consultation workspace" width="49%">
+  <img src="docs/images/screens/15-bed-board.jpg" alt="Live bed board" width="49%">
+  <img src="docs/images/screens/28-dark-mode.jpg" alt="Dark mode" width="49%">
+</p><hr>
+<h2>🚀 Quick start</h2>
+<h3>Step 1 — Check the prerequisites</h3>
+<table>
+<thead>
+<tr>
+<th>You need</th>
+<th>Version</th>
+<th>Check with</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Node.js</td>
+<td>22 or newer</td>
+<td><code>node -v</code></td>
+</tr>
+<tr>
+<td>MySQL Server</td>
+<td>8.x, running</td>
+<td><code>mysql --version</code> (or check <em>Services</em> → <strong>MySQL80</strong> on Windows)</td>
+</tr>
+<tr>
+<td>Google Chrome</td>
+<td>any (only for the optional screenshot/QA scripts)</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p>The default MySQL login is <strong><code>root</code> / <code>root</code></strong>. If yours is different, edit <code>server/.env</code> (Step 3).</p>
+<h3>Step 2 — Install</h3>
+<pre><code class="language-bash">cd nexgen-hms
+npm install
+</code></pre>
+<h3>Step 3 — Configure (optional)</h3>
+<p><code>server/.env</code> is already filled in for local use. The settings you are most likely to change:</p>
+<pre><code class="language-ini">DB_HOST=127.0.0.1
+DB_USER=root
+DB_PASSWORD=root
+DB_NAME=nexgen_hms
+PORT=4000
+</code></pre>
+<h3>Step 4 — Create the database with demo data</h3>
+<pre><code class="language-bash">npm run db:setup
+</code></pre>
+<pre><code class="language-text">✔ database nexgen_hms ready
+✔ migrations applied
+✔ plans
+✔ platform owner
+✔ sunrise (Enterprise) seeded
+✔ carewell (Starter trial) seeded
+</code></pre>
+<h3>Step 5 — Start and sign in</h3>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>Open <strong><a href="http://localhost:5173">http://localhost:5173</a></strong>. Click a <strong>demo account</strong> button on the sign-in page, then <strong>Sign in</strong>. Press <strong>Ctrl + C</strong> in the terminal to stop.</p>
+<p align="center"><img src="docs/images/screens/01-sign-in.jpg" alt="Sign-in page with organisation branding and demo accounts" width="85%"></p><blockquote>
+<p>💡 The sign-in page picks up each organisation&#39;s name, tagline and brand colour as soon as you type its code.</p>
+</blockquote>
+<hr>
+<h2>👤 Demo accounts</h2>
+<table>
+<thead>
+<tr>
+<th>Organisation code</th>
+<th>Email</th>
+<th>Password</th>
+<th>You&#39;ll see</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:admin@sunrise.health">admin@sunrise.health</a></td>
+<td><code>Admin@123</code></td>
+<td>🏥 Everything — all modules, settings, users</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:doctor@sunrise.health">doctor@sunrise.health</a></td>
+<td><code>Staff@123</code></td>
+<td>🩺 Queue, consultations, prescriptions</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:reception@sunrise.health">reception@sunrise.health</a></td>
+<td><code>Staff@123</code></td>
+<td>🗓️ Registration, booking, collections</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:nurse@sunrise.health">nurse@sunrise.health</a></td>
+<td><code>Staff@123</code></td>
+<td>❤️ Vitals, nursing notes, beds</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:pharmacy@sunrise.health">pharmacy@sunrise.health</a></td>
+<td><code>Staff@123</code></td>
+<td>💊 Dispensing, stock</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:lab@sunrise.health">lab@sunrise.health</a></td>
+<td><code>Staff@123</code></td>
+<td>🧪 Samples, results, verification</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:accounts@sunrise.health">accounts@sunrise.health</a></td>
+<td><code>Staff@123</code></td>
+<td>💳 Invoices, refunds, reports</td>
+</tr>
+<tr>
+<td><code>sunrise</code></td>
+<td><a href="mailto:patient@sunrise.health">patient@sunrise.health</a></td>
+<td><code>Patient@123</code></td>
+<td>📱 Patient portal</td>
+</tr>
+<tr>
+<td><code>carewell</code></td>
+<td><a href="mailto:admin@carewell.clinic">admin@carewell.clinic</a></td>
+<td><code>Admin@123</code></td>
+<td>🏪 Small clinic on the Starter plan (no pharmacy / lab / IPD)</td>
+</tr>
+<tr>
+<td><em>(leave empty)</em></td>
+<td><a href="mailto:owner@nexgen.health">owner@nexgen.health</a></td>
+<td><code>Owner@123</code></td>
+<td>👑 SaaS platform owner console</td>
+</tr>
+</tbody></table>
+<p><code>sunrise</code> comes with 6 doctors, about 50 patients, 30 days of appointments and payments, a stocked pharmacy, a lab catalogue, 24 beds and live admissions.</p>
+<hr>
+<h2>🧭 Step-by-step user guide</h2>
+<p>Follow a patient through the hospital, then configure the system. Each step says <strong>who</strong> does it and <strong>where</strong> to click.</p>
+<h3>1️⃣ Get your bearings — Dashboard</h3>
+<p><strong>Who:</strong> any staff · <strong>Where:</strong> <em>Dashboard</em></p>
+<p>KPI cards show today&#39;s appointments, collections, dues, bed occupancy, pending lab work and prescriptions to dispense. Below them: the 30-day collections chart, today&#39;s OPD flow, department load and payment-mode mix. Each role sees only the figures it is allowed to see.</p>
+<p align="center"><img src="docs/images/screens/03-dashboard.jpg" alt="Dashboard" width="90%"></p><h3>2️⃣ Register a patient</h3>
+<p><strong>Who:</strong> Receptionist · <strong>Where:</strong> <em>Patients → Register patient</em></p>
+<ol>
+<li>Enter the name, gender, age or date of birth, and mobile number. A <strong>UHID</strong> is generated automatically.</li>
+<li>Add blood group, ABHA number, allergies and conditions (press <strong>Enter</strong> after each tag).</li>
+<li>Fill your clinic&#39;s <strong>custom fields</strong> (for example insurance scheme or occupation).</li>
+<li>If the mobile number is already registered, a <strong>possible duplicate</strong> warning appears before you save.</li>
+</ol>
+<p align="center"><img src="docs/images/screens/04-register-patient.jpg" alt="Register patient dialog" width="49%"> <img src="docs/images/screens/05-patient-profile.jpg" alt="Patient profile with timeline" width="49%"></p><p>The <strong>patient profile</strong> (right) brings together contact details, medical summary, latest vitals and one timeline: visits, consultations, lab, billing and admissions.</p>
+<h3>3️⃣ Book an appointment</h3>
+<p><strong>Who:</strong> Receptionist · <strong>Where:</strong> <em>Appointments → Book appointment</em></p>
+<ol>
+<li>Search the patient by name, UHID or phone, or register a new one from the search box.</li>
+<li>Pick the <strong>doctor</strong> and <strong>date</strong>. Slots come from the doctor&#39;s weekly schedule; full, past and on-leave slots are disabled, and shared slots show how many places are left.</li>
+<li>Choose a slot, add the reason, then click <strong>Book</strong>. The token number and fee are confirmed, and an invoice is raised automatically if the clinic has enabled that.</li>
+<li>For a <strong>walk-in</strong>, switch on <em>Walk-in now</em>. The patient is added to today&#39;s queue and checked in straight away.</li>
+</ol>
+<p align="center"><img src="docs/images/screens/06-book-appointment.jpg" alt="Booking dialog with slot grid" width="90%"></p><blockquote>
+<p>💡 A repeat visit to the same doctor within the follow-up window is detected automatically and charged the <strong>follow-up fee</strong>.</p>
+</blockquote>
+<h3>4️⃣ Run the live queue</h3>
+<p><strong>Who:</strong> Receptionist / Doctor · <strong>Where:</strong> <em>Appointments → Live queue</em></p>
+<p>Patients move across <strong>Booked → Waiting → In consultation → Completed</strong>. Each card shows the token, patient, doctor, visit type and payment status, with one-click <strong>Check in</strong>, <strong>Consult</strong> and <strong>Collect</strong>. The board refreshes itself every 20 seconds.</p>
+<p align="center"><img src="docs/images/screens/07-live-queue.jpg" alt="Live OPD queue" width="90%"></p><h3>5️⃣ Consult the patient</h3>
+<p><strong>Who:</strong> Doctor · <strong>Where:</strong> queue card → <strong>Consult</strong></p>
+<ol>
+<li><strong>Vitals:</strong> values outside the normal range turn red, and BMI is calculated as you type.</li>
+<li><strong>Clinical notes:</strong> complaint, history, examination. Allergies are shown in a red banner.</li>
+<li><strong>Diagnosis:</strong> ICD-10 code and description; one-click chips add common diagnoses.</li>
+<li><strong>Prescription:</strong> pick medicines from the pharmacy catalogue (or type free text). Quantity = frequency × days.</li>
+<li><strong>Investigations:</strong> tick lab tests and choose a priority (Routine / Urgent / STAT).</li>
+<li><strong>Previous visits:</strong> earlier diagnoses and medicines, with <strong>Repeat prescription</strong>.</li>
+<li><strong>Save draft</strong> at any time, then <strong>Finalise &amp; complete</strong>. The record locks, the appointment completes, and the prescription goes to the pharmacy queue.</li>
+</ol>
+<p align="center"><img src="docs/images/screens/09-prescription.jpg" alt="Diagnosis and prescription builder" width="90%"></p><h3>6️⃣ Print the prescription</h3>
+<p><strong>Who:</strong> Doctor · <strong>Where:</strong> consultation → <strong>Print prescription</strong></p>
+<p>A branded A4 layout with your logo, registration number, GSTIN, doctor&#39;s qualifications, vitals, diagnosis, ℞ table, investigations, advice and follow-up date. Use <strong>Print / Save PDF</strong>.</p>
+<p align="center"><img src="docs/images/screens/11-print-prescription.jpg" alt="Printed prescription" width="80%"></p><h3>7️⃣ Collect payment</h3>
+<p><strong>Who:</strong> Receptionist / Accountant · <strong>Where:</strong> <em>Billing</em> → invoice → <strong>Collect</strong></p>
+<p>Choose the mode (Cash, UPI, Card, Net banking, Cheque, Insurance, Wallet), add a reference and record it. The receipt number is generated automatically and partial payments are supported. <strong>Refund</strong> and <strong>Cancel</strong> follow strict rules: you can&#39;t cancel a paid invoice until it has been refunded.</p>
+<p align="center"><img src="docs/images/screens/10-collect-payment.jpg" alt="Collect payment dialog" width="90%"></p><h3>8️⃣ Dispense medicines</h3>
+<p><strong>Who:</strong> Pharmacist · <strong>Where:</strong> <em>Pharmacy → Prescriptions → Dispense</em></p>
+<p>Finalised prescriptions appear here automatically, with the patient&#39;s allergies. Confirm quantities (or substitute) and click <strong>Dispense &amp; bill</strong>. Stock is taken from the <strong>earliest-expiring batch first</strong>; expired or insufficient stock is blocked. For walk-in customers use <strong>Counter sale</strong>.</p>
+<p align="center"><img src="docs/images/screens/12-dispense.jpg" alt="Dispense dialog" width="49%"> <img src="docs/images/screens/13-pharmacy-stock.jpg" alt="Pharmacy stock with alerts" width="49%"></p><p>The <strong>Stock</strong> tab (right) filters for low stock, out of stock, expiring soon and expired. Click a medicine to see its batches and stock ledger, or <strong>Stock in</strong> a new purchase.</p>
+<h3>9️⃣ Enter and verify lab results</h3>
+<p><strong>Who:</strong> Lab technician · <strong>Where:</strong> <em>Laboratory</em> → order</p>
+<ol>
+<li><strong>Collect sample:</strong> a sample ID is assigned.</li>
+<li>Type the results. Values are flagged <strong>High ↑ / Low ↓ / Normal</strong> against the reference range as you type.</li>
+<li><strong>Complete</strong>, then <strong>Verify &amp; release</strong>. The doctor is notified and the report appears in the patient portal.</li>
+</ol>
+<p align="center"><img src="docs/images/screens/14-lab-results.jpg" alt="Lab result entry with flags" width="49%"> <img src="docs/images/screens/14b-lab-report.jpg" alt="Printed lab report" width="49%"></p><h3>🔟 Admit, care for and discharge an in-patient</h3>
+<p><strong>Who:</strong> Doctor / Nurse / Receptionist · <strong>Where:</strong> <em>In-Patient</em></p>
+<ol>
+<li>The <strong>bed board</strong> shows every ward. Green is available, solid is occupied, amber is being cleaned, grey is under maintenance.</li>
+<li>Click a free bed → <strong>Admit here</strong> (or <strong>Admit patient</strong>), choose the doctor, and optionally collect a deposit.</li>
+<li>On the admission page, add <strong>progress / nursing notes</strong> with vitals, add <strong>charges</strong> from the service list, or <strong>Transfer bed</strong>.</li>
+<li><strong>Discharge:</strong> choose the discharge type and write the summary. Bed-days are billed automatically and the bed goes for cleaning.</li>
+</ol>
+<p align="center"><img src="docs/images/screens/15-bed-board.jpg" alt="Bed board" width="49%"> <img src="docs/images/screens/16-admission.jpg" alt="Admission page with timeline and running bill" width="49%"></p><h3>1️⃣1️⃣ Analyse with reports</h3>
+<p><strong>Who:</strong> Admin / Accountant · <strong>Where:</strong> <em>Reports</em></p>
+<p>Pick a date range (or 7 / 30 / 90 days). Tabs: <strong>Collections</strong> (daily, by mode, by department), <strong>Doctors</strong> (booked, seen, follow-ups, revenue), <strong>Appointments</strong> (outcomes, channels, peak hours), <strong>Pharmacy</strong> (top sellers), <strong>Laboratory</strong> (test volume). Every table exports to <strong>CSV</strong>.</p>
+<p align="center"><img src="docs/images/screens/17-reports.jpg" alt="Reports" width="90%"></p><h3>1️⃣2️⃣ The patient&#39;s view — portal</h3>
+<p><strong>Who:</strong> Patient · <strong>Where:</strong> sign in with a patient account</p>
+<p>Upcoming and past visits, <strong>Book appointment</strong> (choose doctor → date → time → confirm), and <strong>My records</strong>: prescriptions, verified lab reports and bills. Staff give a patient access from the patient profile → <strong>⋯ → Portal access</strong>.</p>
+<p align="center"><img src="docs/images/screens/22-portal-home.jpg" alt="Patient portal home" width="49%"> <img src="docs/images/screens/23-portal-booking.jpg" alt="Patient self-booking" width="49%"></p><h3>1️⃣3️⃣ Make it yours — branding and custom fields</h3>
+<p><strong>Who:</strong> Admin · <strong>Where:</strong> <em>Settings</em></p>
+<ul>
+<li><strong>Branding:</strong> pick a colour and the whole app re-themes immediately for every user; add a logo, tagline and GSTIN.</li>
+<li><strong>Patient fields:</strong> add your own registration fields (text, number, date, dropdown; required or optional).</li>
+<li>Also under Settings: <strong>Localisation</strong>, <strong>Numbering</strong>, <strong>Appointments</strong>, <strong>Billing &amp; tax</strong>, <strong>Clinical</strong>, <strong>Pharmacy</strong>, <strong>Notifications</strong> and <strong>Subscription</strong>.</li>
+</ul>
+<p align="center"><img src="docs/images/screens/18-branding.jpg" alt="Branding settings with live preview" width="49%"> <img src="docs/images/screens/19-custom-fields.jpg" alt="Custom patient fields" width="49%"></p><h3>1️⃣4️⃣ Control access — users and roles</h3>
+<p><strong>Who:</strong> Admin · <strong>Where:</strong> <em>Users &amp; Roles</em></p>
+<p>Add staff (optionally linked to a doctor profile), reset passwords and unlock accounts. Under <strong>Roles &amp; permissions</strong>, edit a role&#39;s permission matrix or create custom roles. Modules outside your plan are greyed out.</p>
+<p align="center"><img src="docs/images/screens/20-roles-permissions.jpg" alt="Role permission matrix" width="90%"></p><h3>1️⃣5️⃣ Work fast — search everything</h3>
+<p><strong>Who:</strong> any staff · <strong>Where:</strong> press <strong>Ctrl + K</strong></p>
+<p>Jump to any patient (name, UHID, phone), invoice, appointment or page from the keyboard.</p>
+<p align="center"><img src="docs/images/screens/21-command-palette.jpg" alt="Command palette" width="80%"></p><h3>1️⃣6️⃣ Run the SaaS — platform owner</h3>
+<p><strong>Who:</strong> Platform owner (sign in with an empty organisation code) · <strong>Where:</strong> <em>Platform console</em></p>
+<ul>
+<li><strong>Overview:</strong> organisations, MRR, users, patients, and organisations by plan.</li>
+<li><strong>Organisations:</strong> onboard a clinic in seconds (default roles, departments and services are created automatically). Click one to <strong>Activate / Suspend / Extend trial</strong>, change its plan, or switch individual modules on or off.</li>
+<li><strong>Plans &amp; modules:</strong> set prices, user limits and which modules each plan includes.</li>
+</ul>
+<p align="center"><img src="docs/images/screens/24-platform-overview.jpg" alt="Platform overview" width="49%"> <img src="docs/images/screens/25-tenant-modules.jpg" alt="Tenant plan and module overrides" width="49%"></p><p>New clinics can also <strong>sign up themselves</strong> from the sign-in page (<em>Start a 14-day free trial</em>): organisation, administrator, plan, and the workspace is ready in seconds.</p>
+<p align="center"><img src="docs/images/screens/02-signup.jpg" alt="Self-signup with plan selection" width="49%"> <img src="docs/images/screens/26-plans.jpg" alt="Plans and modules editor" width="49%"></p><h3>🎨 Every organisation, every device</h3>
+<p>Each clinic gets its own colour, name and plan-trimmed navigation (CareWell below, in indigo, on the Starter plan with a trial banner). There&#39;s dark mode on every screen, and phones and tablets are fully supported.</p>
+<p align="center">
+  <img src="docs/images/screens/27-second-tenant.jpg" alt="Second tenant with its own theme" width="55%">
+  <img src="docs/images/screens/29-mobile-queue.jpg" alt="Mobile live queue" width="19%">
+  <img src="docs/images/screens/30-mobile-dashboard.jpg" alt="Mobile dashboard" width="19%">
+</p><hr>
+<h2>🏗️ How it is built</h2>
+<h3>System architecture</h3>
+<p align="center"><img src="docs/images/diagrams/architecture.png" alt="System architecture" width="100%"></p><h3>Patient journey</h3>
+<p align="center"><img src="docs/images/diagrams/journey.png" alt="Patient journey across departments" width="100%"></p><h3>Security model</h3>
+<p align="center"><img src="docs/images/diagrams/security.png" alt="Security layers" width="92%"></p><h3>Role-based access</h3>
+<p align="center"><img src="docs/images/diagrams/roles.png" alt="Role access matrix" width="92%"></p><h3>Plans and module licensing</h3>
+<p align="center"><img src="docs/images/diagrams/plans.png" alt="Plans and modules" width="92%"></p><h3>Configuration engine</h3>
+<p align="center"><img src="docs/images/diagrams/config.png" alt="Per-tenant configuration" width="100%"></p><h3>Data model</h3>
+<p align="center"><img src="docs/images/diagrams/datamodel.png" alt="Data model" width="100%"></p><h3>Tech stack</h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Web</td>
+<td>React 19 · Vite 8 · Tailwind CSS 4 · Radix UI (shadcn/ui pattern) · TanStack Query · React Router 7 · Recharts · cmdk · Sonner · Inter</td>
+</tr>
+<tr>
+<td>API</td>
+<td>Node.js 22 · Express 5 · TypeScript (strict) · Zod · Pino · Helmet · express-rate-limit</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>MySQL 8 · Drizzle ORM · versioned SQL migrations</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>bcrypt · JWT access tokens · rotating httpOnly refresh cookies</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>Vitest + Supertest · scripted end-to-end journey · Playwright-driven headless Chrome</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>✅ Quality</h2>
+<p align="center"><img src="docs/images/diagrams/quality.png" alt="Quality summary" width="100%"></p><p>Full details, requirement traceability and the defect log are in the <strong><a href="docs/06-QA-REPORT.md">QA report</a></strong>.</p>
+<hr>
+<h2>🧰 Commands</h2>
+<p>Run these from the <code>nexgen-hms</code> folder.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>npm run dev</code></td>
+<td>Start API (port 4000, auto-reload) and web (port 5173)</td>
+</tr>
+<tr>
+<td><code>npm run db:setup</code></td>
+<td>Create the database, apply migrations, load demo data (safe to re-run)</td>
+</tr>
+<tr>
+<td><code>npm run db:reset</code></td>
+<td>Wipe and rebuild the demo database (refuses in production)</td>
+</tr>
+<tr>
+<td><code>npm test</code></td>
+<td>Run the 86 API tests on a separate <code>nexgen_hms_test</code> database</td>
+</tr>
+<tr>
+<td><code>npm run typecheck</code></td>
+<td>Strict TypeScript check of API and web</td>
+</tr>
+<tr>
+<td><code>npm run build</code></td>
+<td>Build API to <code>server/dist</code> and web to <code>web/dist</code></td>
+</tr>
+<tr>
+<td><code>npm start</code></td>
+<td>Production server on port 4000: serves the API <strong>and</strong> the web app</td>
+</tr>
+<tr>
+<td><code>npm run e2e -- &lt;url&gt;</code></td>
+<td>18-step end-to-end patient journey</td>
+</tr>
+<tr>
+<td><code>npm run qa:ui -- &lt;url&gt;</code></td>
+<td>Headless-Chrome check of 38 screens and a real booking</td>
+</tr>
+<tr>
+<td><code>npm run docs:shots -- &lt;url&gt;</code></td>
+<td>Regenerate the README screenshots (run after <code>npm run db:reset</code>)</td>
+</tr>
+<tr>
+<td><code>npm run docs:diagrams</code></td>
+<td>Regenerate the README diagrams from <code>docs/images/diagrams/src</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>The QA and screenshot scripts use your installed Google Chrome. Set <code>CHROME_PATH</code> if it isn&#39;t in the default Windows location.</p>
+</blockquote>
+<hr>
+<h2>🚢 Production deployment</h2>
+<pre><code class="language-bash">npm ci
+npm run build
+cd server
+# set real secrets and database details (see server/.env.example)
+NODE_ENV=production PORT=8080 \
+JWT_ACCESS_SECRET=&lt;32+ random characters&gt; JWT_REFRESH_SECRET=&lt;32+ random characters&gt; \
+DB_HOST=... DB_USER=... DB_PASSWORD=... DB_NAME=nexgen_hms \
+CORS_ORIGINS=https://app.example.com \
+node dist/db/migrate.js &amp;&amp; node dist/index.js
+</code></pre>
+<ul>
+<li>One process serves both the API and the built web app. Put HTTPS in front of it (nginx, Caddy, or a cloud load balancer).</li>
+<li>The API is stateless. To run several instances, move the rate-limit counters to a shared store (Redis) and run migrations once per deploy.</li>
+<li>Sign-in limits are configurable: <code>LOGIN_LIMIT_PER_ACCOUNT</code> (default 20) and <code>LOGIN_LIMIT_PER_IP</code> (default 500) per 15 minutes.</li>
+</ul>
+<hr>
+<h2>📁 Project structure</h2>
+<pre><code class="language-text">nexgen-hms/
+├── server/                     API (Express 5 + TypeScript)
+│   ├── src/
+│   │   ├── config/             environment validation
+│   │   ├── core/               auth &amp; RBAC · module catalogue · settings engine · audit · numbering
+│   │   ├── db/                 schema (32 tables) · migrations · seed / setup / reset
+│   │   └── modules/            auth · platform · admin · masters · patients · appointments · opd
+│   │                           billing · pharmacy · lab · ipd · reports · comms · portal
+│   ├── drizzle/                SQL migrations
+│   └── tests/                  86 API tests, grouped by requirement ID
+├── web/                        React app
+│   └── src/
+│       ├── components/         UI kit · app shell · data table · pickers · dialogs
+│       ├── lib/                API client (silent token refresh) · auth · formatters
+│       └── features/           one folder per module
+├── scripts/                    e2e-smoke · ui-qa · readme-shots · render-diagrams
+└── docs/                       analysis → research → BRD → requirements → plan → QA report
+    └── images/                 README screenshots and diagrams (+ diagram sources)
+</code></pre>
+<hr>
+<h2>🛠️ Troubleshooting</h2>
+<details>
+<summary><b>“Port 4000 (or 5173) is already in use”</b></summary><p>An earlier copy is still running. Close that terminal, or run:</p>
+<pre><code class="language-bash">npx kill-port 4000 5173
+</code></pre>
+</details><details>
+<summary><b>Database error / “Access denied for user 'root'”</b></summary><p>Make sure MySQL is running (Windows: <em>Services</em> → <strong>MySQL80</strong> → Start), and that <code>DB_USER</code> / <code>DB_PASSWORD</code> in <code>server/.env</code> match your MySQL login. Then run <code>npm run db:setup</code> again.</p>
+</details><details>
+<summary><b>“Too many sign-in attempts” or “Account locked”</b></summary><p>After 5 wrong passwords an account locks for 15 minutes. An admin can unlock it immediately: <em>Users &amp; Roles</em> → key icon → reset password. Restarting the server also clears the in-memory rate limits.</p>
+</details><details>
+<summary><b>I want to start again with clean demo data</b></summary><pre><code class="language-bash">npm run db:reset
+</code></pre>
+<p>This deletes everything in the <code>nexgen_hms</code> database and reloads the demo data.</p>
+</details><details>
+<summary><b>A page says “You do not have access”</b></summary><p>Either your role lacks that permission or the organisation&#39;s plan doesn&#39;t include that module. For example, CareWell (Starter) has no Pharmacy, Lab or In-patient. Change the role under <em>Users &amp; Roles</em>, or the plan from the platform console.</p>
+</details><hr>
+<h2>🗺️ Roadmap</h2>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✅ Done</td>
+<td>Multi-tenant SaaS, OPD/EMR, billing, pharmacy, lab, IPD, reports, patient portal, RBAC, audit</td>
+</tr>
+<tr>
+<td>🔜 Next</td>
+<td>Real SMS / WhatsApp / email and payment gateways (integration points already isolated)</td>
+</tr>
+<tr>
+<td>🔜 Next</td>
+<td>Document uploads and AI document summaries (from the v1 prototype)</td>
+</tr>
+<tr>
+<td>🗓️ Planned</td>
+<td>Insurance / TPA claims · OT scheduling · radiology / PACS</td>
+</tr>
+<tr>
+<td>🗓️ Planned</td>
+<td>ABDM (ABHA) and HL7 FHIR R4 integration · telehealth video</td>
+</tr>
+<tr>
+<td>🗓️ Planned</td>
+<td>Branch-level filtering · Redis-backed rate limits for multi-instance scaling</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📚 Documentation</h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="docs/01-CODEBASE-ANALYSIS.md">01 · Codebase analysis</a></td>
+<td>The v1 prototype, its gaps, and why the platform was rebuilt</td>
+</tr>
+<tr>
+<td><a href="docs/02-MARKET-RESEARCH.md">02 · Market research</a></td>
+<td>Competitor features and positioning</td>
+</tr>
+<tr>
+<td><a href="docs/03-BRD.md">03 · Business requirements (BRD)</a></td>
+<td>Objectives, users, scope, business rules</td>
+</tr>
+<tr>
+<td><a href="docs/04-REQUIREMENTS.md">04 · Requirements (SRS)</a></td>
+<td>Functional and non-functional requirements with IDs</td>
+</tr>
+<tr>
+<td><a href="docs/05-IMPLEMENTATION-PLAN.md">05 · Implementation plan</a></td>
+<td>Architecture, data model, phases, test strategy</td>
+</tr>
+<tr>
+<td><a href="docs/06-QA-REPORT.md">06 · QA report</a></td>
+<td>Results, traceability, defect log, known limitations</td>
+</tr>
+</tbody></table>
+<p align="center"><sub>Built by SRM Products · NexGen HMS Release 1</sub></p>
+</article></body></html>

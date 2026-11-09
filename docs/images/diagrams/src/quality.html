@@ -1,0 +1,51 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1200px; }
+  .stats { margin-top: 22px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .stat { text-align: left; padding: 16px; }
+  .stat .v { font-size: 30px; font-weight: 800; letter-spacing: -0.03em; margin-top: 8px; }
+  .stat .v small { font-size: 15px; color: var(--muted); font-weight: 600; }
+  .stat .k { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat .ok { margin-top: 10px; height: 6px; border-radius: 99px; background: var(--brand); }
+  .bottom { margin-top: 16px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px; }
+  .pyr { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px; }
+  .lv { color: #fff; border-radius: 10px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+  .lv b { font-weight: 700; }
+  .defects { padding: 16px 18px; }
+  .d { display: grid; grid-template-columns: 74px 1fr; gap: 10px; align-items: start; padding: 6px 0; font-size: 12.5px; border-bottom: 1px dashed var(--line); }
+  .d:last-child { border: 0; }
+  .sev { font-size: 10.5px; font-weight: 700; padding: 3px 8px; border-radius: 99px; text-align: center; }
+  .crit { background: #ffe4e6; color: var(--rose); }
+  .high { background: #fef3c7; color: var(--amber); }
+  .med { background: #e0f2fe; color: var(--sky); }
+</style></head>
+<body><div id="d">
+  <h1 class="t">Quality — tested at every layer</h1>
+  <p class="s">Automated API tests against a real MySQL database, a scripted end-to-end journey, and a headless-Chrome walk-through of every screen under the production CSP.</p>
+  <div class="stats">
+    <div class="card stat"><div class="ic t-brand"><i data-icon="FlaskConical"></i></div><div class="v">86<small>/86</small></div><div class="k">API tests passing</div><div class="ok"></div></div>
+    <div class="card stat"><div class="ic t-indigo"><i data-icon="Route"></i></div><div class="v">18<small>/18</small></div><div class="k">End-to-end journey steps</div><div class="ok"></div></div>
+    <div class="card stat"><div class="ic t-sky"><i data-icon="MonitorCheck"></i></div><div class="v">38<small>/38</small></div><div class="k">Screens with zero errors</div><div class="ok"></div></div>
+    <div class="card stat"><div class="ic t-violet"><i data-icon="Code"></i></div><div class="v">0</div><div class="k">TypeScript errors (strict)</div><div class="ok"></div></div>
+    <div class="card stat"><div class="ic t-green"><i data-icon="ShieldCheck"></i></div><div class="v">0</div><div class="k">Vulnerabilities in shipped deps</div><div class="ok"></div></div>
+    <div class="card stat"><div class="ic t-amber"><i data-icon="Bug"></i></div><div class="v">9<small> fixed</small></div><div class="k">Defects found by testing</div><div class="ok"></div></div>
+  </div>
+  <div class="bottom">
+    <div class="card pyr">
+      <div class="lbl" style="align-self:flex-start;margin-bottom:6px">Test pyramid</div>
+      <div class="lv" style="width:44%;background:var(--violet)"><span>Browser UI</span><b>38 screens</b></div>
+      <div class="lv" style="width:62%;background:var(--indigo)"><span>End-to-end journey</span><b>18 steps</b></div>
+      <div class="lv" style="width:80%;background:#0e7490"><span>API integration + regression</span><b>86 tests</b></div>
+      <div class="lv" style="width:100%;background:var(--brand)"><span>Static analysis — strict TypeScript, production build</span><b>0 errors</b></div>
+    </div>
+    <div class="card defects">
+      <div class="lbl" style="margin-bottom:6px">Notable defects caught &amp; fixed</div>
+      <div class="d"><span class="sev crit">CRITICAL</span><span>Concurrent bookings could overbook a slot — fixed with row locks + READ COMMITTED</span></div>
+      <div class="d"><span class="sev crit">CRITICAL</span><span>Link-style buttons crashed 7 screens — found by the browser walk-through</span></div>
+      <div class="d"><span class="sev high">HIGH</span><span>Stock on-hand &amp; counts miscalculated by correlated sub-queries</span></div>
+      <div class="d"><span class="sev high">HIGH</span><span>Doctor's history notes overwritten on reload</span></div>
+      <div class="d"><span class="sev med">MEDIUM</span><span>Shared-NAT login lockout · multi-tab logout · duplicate encounters</span></div>
+    </div>
+  </div>
+</div></body></html>

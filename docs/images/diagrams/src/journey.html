@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1200px; }
+  .flow { margin-top: 22px; display: grid; grid-template-columns: repeat(5, 1fr) ; gap: 14px; position: relative; }
+  .stage { position: relative; }
+  .stage .card { height: 100%; padding: 14px; }
+  .head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .head b { font-size: 14px; display: block; }
+  .head span { font-size: 11px; color: var(--muted); }
+  .num { position: absolute; top: -10px; left: -8px; width: 24px; height: 24px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 3px var(--bg); }
+  ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  li { font-size: 12.5px; display: flex; gap: 7px; align-items: flex-start; line-height: 1.35; }
+  li::before { content: ''; width: 6px; height: 6px; border-radius: 999px; background: currentColor; opacity: .35; margin-top: 6px; flex: none; }
+  .stage:not(:last-child)::after { content: '›'; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); font-size: 22px; color: #94a3b8; }
+  .outcome { margin-top: 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .outcome .card { display: flex; gap: 12px; align-items: center; padding: 12px 14px; }
+  .outcome b { font-size: 13px; display: block; }
+  .outcome span { font-size: 11.5px; color: var(--muted); }
+  .bar { height: 4px; border-radius: 99px; margin: -14px -14px 12px; border-radius: 16px 16px 0 0; }
+</style></head>
+<body><div id="d">
+  <h1 class="t">Patient journey — one record, every department</h1>
+  <p class="s">Each hand-off happens in the same system: no re-typing, every action lands on the patient's timeline and the audit trail.</p>
+  <div class="flow">
+    <div class="stage"><div class="num">1</div><div class="card"><div class="bar" style="background:var(--sky)"></div>
+      <div class="head"><div class="ic t-sky"><i data-icon="ClipboardList"></i></div><div><b>Front desk</b><span>Receptionist</span></div></div>
+      <ul><li>Register — auto UHID, custom fields, duplicate warning</li><li>Book a slot or add a walk-in token</li><li>Auto-invoice + collect fee</li><li>Check-in → live queue</li></ul></div></div>
+    <div class="stage"><div class="num">2</div><div class="card"><div class="bar" style="background:var(--brand)"></div>
+      <div class="head"><div class="ic t-brand"><i data-icon="Stethoscope"></i></div><div><b>Consultation</b><span>Doctor</span></div></div>
+      <ul><li>Vitals with live BMI &amp; range colours</li><li>History, exam, ICD-10 diagnosis</li><li>e-Prescription from catalogue</li><li>Order lab · finalise &amp; print</li></ul></div></div>
+    <div class="stage"><div class="num">3</div><div class="card"><div class="bar" style="background:var(--amber)"></div>
+      <div class="head"><div class="ic t-amber"><i data-icon="Pill"></i></div><div><b>Pharmacy</b><span>Pharmacist</span></div></div>
+      <ul><li>Prescription appears in queue</li><li>Dispense earliest-expiry batch first</li><li>Expired / short stock blocked</li><li>GST bill + payment</li></ul></div></div>
+    <div class="stage"><div class="num">4</div><div class="card"><div class="bar" style="background:var(--violet)"></div>
+      <div class="head"><div class="ic t-violet"><i data-icon="FlaskConical"></i></div><div><b>Laboratory</b><span>Lab technician</span></div></div>
+      <ul><li>Collect sample (ID)</li><li>Enter results — auto High / Low flags</li><li>Verify &amp; release</li><li>Doctor notified · printable report</li></ul></div></div>
+    <div class="stage"><div class="num">5</div><div class="card"><div class="bar" style="background:var(--rose)"></div>
+      <div class="head"><div class="ic t-rose"><i data-icon="BedDouble"></i></div><div><b>In-patient</b><span>Doctor · nurse · desk</span></div></div>
+      <ul><li>Admit to free bed + deposit</li><li>Progress / nursing notes, charges</li><li>Bed transfer</li><li>Discharge — bed-days billed</li></ul></div></div>
+  </div>
+  <div class="outcome">
+    <div class="card"><div class="ic t-green"><i data-icon="Smartphone"></i></div><div><b>Patient portal</b><span>Prescriptions, verified reports and bills online</span></div></div>
+    <div class="card"><div class="ic t-indigo"><i data-icon="History"></i></div><div><b>Unified timeline</b><span>Visits, Rx, labs, bills, admissions in one view</span></div></div>
+    <div class="card"><div class="ic t-brand"><i data-icon="ChartColumn"></i></div><div><b>Live dashboard</b><span>Collections, queue, occupancy, alerts</span></div></div>
+    <div class="card"><div class="ic t-slate"><i data-icon="ScrollText"></i></div><div><b>Audit trail</b><span>Who did what, when, from where</span></div></div>
+  </div>
+</div></body></html>

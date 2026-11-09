@@ -1,0 +1,49 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1200px; }
+  .wrap { margin-top: 22px; display: grid; grid-template-columns: 1fr 260px 1fr; gap: 18px; align-items: center; }
+  .stack { display: flex; flex-direction: column; gap: 10px; }
+  .item { display: flex; gap: 12px; align-items: center; padding: 12px 14px; }
+  .item b { font-size: 13.5px; display: block; }
+  .item span { font-size: 11.5px; color: var(--muted); }
+  .hub { text-align: center; padding: 26px 18px; border-radius: 22px; background: linear-gradient(160deg, var(--brand), #0e7490 60%, var(--indigo)); color: #fff; box-shadow: 0 20px 50px -18px #0d948899; }
+  .hub .ic { margin: 0 auto 12px; width: 56px; height: 56px; border-radius: 16px; background: #ffffff22; color: #fff; }
+  .hub .ic svg { width: 28px; height: 28px; }
+  .hub b { font-size: 18px; display: block; }
+  .hub p { font-size: 12.5px; color: #e0f2fe; margin-top: 6px; line-height: 1.45; }
+  .hub .pill { margin-top: 14px; background: #ffffff22; color: #fff; border-color: #ffffff44; }
+  .note { margin-top: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .note .card { padding: 12px 14px; font-size: 12.5px; color: #334155; display: flex; gap: 10px; align-items: center; }
+</style></head>
+<body><div id="d">
+  <h1 class="t">Configure per hospital — without code</h1>
+  <p class="s">Tenant settings are merged over safe defaults on every request, so changes apply instantly to every user and new settings ship without migrations.</p>
+  <div class="wrap">
+    <div class="stack">
+      <div class="card item"><div class="ic t-violet"><i data-icon="Palette"></i></div><div><b>Branding</b><span>Brand colour re-themes the app · logo · tagline · GSTIN</span></div></div>
+      <div class="card item"><div class="ic t-sky"><i data-icon="Globe"></i></div><div><b>Localisation</b><span>Currency, symbol, time zone, date format</span></div></div>
+      <div class="card item"><div class="ic t-slate"><i data-icon="Hash"></i></div><div><b>Numbering</b><span>Prefixes for UHID, invoice, receipt, lab, IP, appointment</span></div></div>
+      <div class="card item"><div class="ic t-brand"><i data-icon="CalendarCog"></i></div><div><b>Appointments</b><span>Slot length, booking window, online booking, walk-ins, overbooking</span></div></div>
+      <div class="card item"><div class="ic t-green"><i data-icon="Receipt"></i></div><div><b>Billing &amp; tax</b><span>Tax label &amp; rate, registration fee, auto-invoice, partial payments</span></div></div>
+    </div>
+    <div class="hub">
+      <div class="ic"><i data-icon="SlidersHorizontal"></i></div>
+      <b>Settings engine</b>
+      <p>One JSON document per tenant, validated section by section and merged over code defaults.</p>
+      <span class="pill"><i data-icon="Zap"></i>Applies instantly</span>
+    </div>
+    <div class="stack">
+      <div class="card item"><div class="ic t-indigo"><i data-icon="FileText"></i></div><div><b>Clinical</b><span>Prescription header/footer, mandatory vitals policy</span></div></div>
+      <div class="card item"><div class="ic t-amber"><i data-icon="Pill"></i></div><div><b>Pharmacy</b><span>Near-expiry warning window</span></div></div>
+      <div class="card item"><div class="ic t-rose"><i data-icon="Bell"></i></div><div><b>Notifications</b><span>SMS · WhatsApp · email · booking confirmations</span></div></div>
+      <div class="card item"><div class="ic t-sky"><i data-icon="ListChecks"></i></div><div><b>Custom patient fields</b><span>Text, number, date, dropdown — required or optional</span></div></div>
+      <div class="card item"><div class="ic t-violet"><i data-icon="UserCog"></i></div><div><b>Roles &amp; permissions</b><span>Edit system roles or build custom ones</span></div></div>
+    </div>
+  </div>
+  <div class="note">
+    <div class="card"><div class="ic t-brand" style="width:30px;height:30px"><i data-icon="ClipboardList"></i></div>Masters: departments, doctors &amp; weekly schedules, services, medicines, lab tests, wards &amp; beds</div>
+    <div class="card"><div class="ic t-amber" style="width:30px;height:30px"><i data-icon="Layers"></i></div>Modules: by plan, with per-tenant enable/disable overrides from the platform console</div>
+    <div class="card"><div class="ic t-green" style="width:30px;height:30px"><i data-icon="ScrollText"></i></div>Every settings change is recorded in the tenant's audit trail</div>
+  </div>
+</div></body></html>

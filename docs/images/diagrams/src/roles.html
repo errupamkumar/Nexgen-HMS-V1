@@ -1,0 +1,37 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1100px; }
+  table { margin-top: 20px; width: 100%; border-collapse: separate; border-spacing: 0; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 24px -12px #0f172a1f; }
+  th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; padding: 12px 8px; background: #f8fafc; border-bottom: 1px solid var(--line); }
+  th:first-child, td:first-child { text-align: left; padding-left: 18px; }
+  td { text-align: center; padding: 11px 8px; border-bottom: 1px solid #f1f5f9; font-size: 13px; }
+  tr:last-child td { border-bottom: 0; }
+  .role { display: flex; align-items: center; gap: 10px; font-weight: 650; }
+  .role .ic { width: 30px; height: 30px; border-radius: 9px; }
+  .role .ic svg { width: 16px; height: 16px; }
+  .f, .p, .n { display: inline-block; width: 18px; height: 18px; border-radius: 999px; vertical-align: middle; }
+  .f { background: var(--brand); box-shadow: 0 0 0 4px #ccfbf1; }
+  .p { background: conic-gradient(var(--brand) 0 50%, #e2e8f0 50% 100%); box-shadow: 0 0 0 4px #f1f5f9; }
+  .n { width: 10px; height: 2px; border-radius: 2px; background: #cbd5e1; }
+  .legend { margin-top: 14px; display: flex; gap: 22px; font-size: 12px; color: var(--muted); align-items: center; }
+  .legend span { display: flex; gap: 8px; align-items: center; }
+</style></head>
+<body><div id="d">
+  <h1 class="t">Role-based access — who can do what</h1>
+  <p class="s">Seven system roles out of the box; tenants can edit them or create custom roles from 37 fine-grained permissions. Enforced by the API, not just hidden in the UI.</p>
+  <table>
+    <thead><tr><th>Role</th><th>Patients</th><th>Appoint&shy;ments</th><th>OPD / EMR</th><th>Billing</th><th>Pharmacy</th><th>Lab</th><th>In-patient</th><th>Reports</th><th>Admin</th></tr></thead>
+    <tbody>
+      <tr><td><div class="role"><div class="ic t-violet"><i data-icon="Crown"></i></div>Administrator</div></td><td><i class="f"></i></td><td><i class="f"></i></td><td><i class="f"></i></td><td><i class="f"></i></td><td><i class="f"></i></td><td><i class="f"></i></td><td><i class="f"></i></td><td><i class="f"></i></td><td><i class="f"></i></td></tr>
+      <tr><td><div class="role"><div class="ic t-brand"><i data-icon="Stethoscope"></i></div>Doctor</div></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="f"></i></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="f"></i></td><td><i class="n"></i></td></tr>
+      <tr><td><div class="role"><div class="ic t-sky"><i data-icon="ClipboardList"></i></div>Receptionist</div></td><td><i class="p"></i></td><td><i class="f"></i></td><td><i class="n"></i></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="n"></i></td></tr>
+      <tr><td><div class="role"><div class="ic t-rose"><i data-icon="HeartPulse"></i></div>Nurse</div></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="p"></i></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="n"></i></td></tr>
+      <tr><td><div class="role"><div class="ic t-amber"><i data-icon="Pill"></i></div>Pharmacist</div></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="p"></i></td><td><i class="f"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="n"></i></td></tr>
+      <tr><td><div class="role"><div class="ic t-violet"><i data-icon="FlaskConical"></i></div>Lab technician</div></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="n"></i></td></tr>
+      <tr><td><div class="role"><div class="ic t-green"><i data-icon="Wallet"></i></div>Accountant</div></td><td><i class="p"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="f"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="n"></i></td><td><i class="f"></i></td><td><i class="n"></i></td></tr>
+      <tr><td><div class="role"><div class="ic t-slate"><i data-icon="UserRound"></i></div>Patient (portal)</div></td><td colspan="9" style="color:var(--muted);font-size:12.5px">Own appointments, prescriptions, verified lab reports and bills only — separate portal API</td></tr>
+    </tbody>
+  </table>
+  <div class="legend"><span><i class="f"></i> Full access</span><span><i class="p"></i> Partial (e.g. view / create, no delete or refund)</span><span><i class="n"></i> No access</span><span style="margin-left:auto">Modules outside the tenant's plan are blocked for every role.</span></div>
+</div></body></html>

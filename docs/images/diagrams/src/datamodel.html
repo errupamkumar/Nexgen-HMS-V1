@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="diagram.css">
+<style>
+  #d { width: 1200px; }
+  .grid { margin-top: 22px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .dom { padding: 14px; }
+  .dom .head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .dom .head b { font-size: 14px; }
+  .dom .head .ic { width: 30px; height: 30px; border-radius: 9px; }
+  .dom .head .ic svg { width: 16px; height: 16px; }
+  .tbls { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tb { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; font-size: 11.5px; padding: 4px 8px; border-radius: 8px; background: #f8fafc; border: 1px solid var(--line); color: #334155; }
+  .rel { margin-top: 16px; padding: 14px 18px; }
+  .chain { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12.5px; }
+  .chain .tb { background: #f0fdfa; border-color: #99f6e4; color: var(--brand-2); font-weight: 600; }
+  .chain .to { color: #94a3b8; }
+  .span2 { grid-column: span 2; }
+</style></head>
+<body><div id="d">
+  <h1 class="t">Data model — 32 tables in 7 domains</h1>
+  <p class="s">Every business table carries <b>tenant_id</b>; composite indexes lead with it. Money is DECIMAL(12,2); flexible data (vitals, diagnoses, lab parameters, settings, custom fields) is JSON.</p>
+  <div class="grid">
+    <div class="card dom span2"><div class="head"><div class="ic t-violet"><i data-icon="Crown"></i></div><b>Platform &amp; identity</b></div>
+      <div class="tbls"><span class="tb">plans</span><span class="tb">tenants</span><span class="tb">users</span><span class="tb">roles</span><span class="tb">refresh_tokens</span><span class="tb">audit_logs</span><span class="tb">sequences</span><span class="tb">notifications</span><span class="tb">message_logs</span></div></div>
+    <div class="card dom span2"><div class="head"><div class="ic t-slate"><i data-icon="ClipboardList"></i></div><b>Masters</b></div>
+      <div class="tbls"><span class="tb">branches</span><span class="tb">departments</span><span class="tb">doctors</span><span class="tb">doctor_schedules</span><span class="tb">doctor_leaves</span><span class="tb">services</span><span class="tb">medicines</span><span class="tb">lab_tests</span><span class="tb">wards</span><span class="tb">beds</span></div></div>
+    <div class="card dom"><div class="head"><div class="ic t-brand"><i data-icon="Stethoscope"></i></div><b>Clinical</b></div>
+      <div class="tbls"><span class="tb">patients</span><span class="tb">appointments</span><span class="tb">encounters</span><span class="tb">prescription_items</span></div></div>
+    <div class="card dom"><div class="head"><div class="ic t-green"><i data-icon="Receipt"></i></div><b>Billing</b></div>
+      <div class="tbls"><span class="tb">invoices</span><span class="tb">invoice_items</span><span class="tb">payments</span></div></div>
+    <div class="card dom"><div class="head"><div class="ic t-amber"><i data-icon="Pill"></i></div><b>Pharmacy</b></div>
+      <div class="tbls"><span class="tb">medicine_batches</span><span class="tb">stock_movements</span></div></div>
+    <div class="card dom"><div class="head"><div class="ic t-violet"><i data-icon="FlaskConical"></i></div><b>Laboratory &amp; IPD</b></div>
+      <div class="tbls"><span class="tb">lab_orders</span><span class="tb">lab_order_items</span><span class="tb">admissions</span><span class="tb">admission_notes</span></div></div>
+  </div>
+  <div class="card rel">
+    <div class="lbl" style="margin-bottom:8px">Key relationships</div>
+    <div class="chain"><span class="tb">tenants</span><span class="to">1 ─ n</span><span class="tb">patients</span><span class="to">1 ─ n</span><span class="tb">appointments</span><span class="to">1 ─ 1</span><span class="tb">encounters</span><span class="to">1 ─ n</span><span class="tb">prescription_items</span><span class="to">→ dispensed from</span><span class="tb">medicine_batches</span></div>
+    <div class="chain" style="margin-top:8px"><span class="tb">invoices</span><span class="to">1 ─ n</span><span class="tb">invoice_items</span><span class="to">·</span><span class="tb">invoices</span><span class="to">1 ─ n</span><span class="tb">payments</span><span class="to">· linked from</span><span class="tb">appointments</span><span class="tb">lab_orders</span><span class="tb">admissions</span></div>
+    <div class="chain" style="margin-top:8px"><span class="tb">wards</span><span class="to">1 ─ n</span><span class="tb">beds</span><span class="to">1 ─ 1 active</span><span class="tb">admissions</span><span class="to">1 ─ n</span><span class="tb">admission_notes</span><span class="to">·</span><span class="tb">doctors</span><span class="to">1 ─ n</span><span class="tb">doctor_schedules</span></div>
+  </div>
+</div></body></html>

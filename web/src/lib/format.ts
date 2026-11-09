@@ -62,3 +62,14 @@ export function addDaysStr(date: string, days: number) {
   d.setUTCDate(d.getUTCDate() + days);
   return d.toISOString().slice(0, 10);
 }
+
+/** "Telmisartan 40" + "40 mg" → "Telmisartan 40 mg"; avoids repeating a strength already in the brand name. */
+export function medLabel(name: string, strength?: string | null) {
+  if (!strength) return name;
+  const num = strength.match(/[\d.]+/)?.[0];
+  if (!num) return `${name} ${strength}`;
+  const unit = strength.slice(strength.indexOf(num) + num.length).trim();
+  if (name.trimEnd().endsWith(num)) return unit ? `${name.trimEnd()} ${unit}` : name;
+  if (name.includes(num)) return name;
+  return `${name} ${strength}`;
+}

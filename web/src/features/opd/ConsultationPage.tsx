@@ -401,7 +401,7 @@ export default function ConsultationPage() {
             </datalist>
             {form.prescriptions.length ? (
               <div className="overflow-x-auto scrollbar-thin">
-                <table className="w-full min-w-[760px] text-sm">
+                <table className="w-full min-w-[820px] text-sm">
                   <thead className="bg-muted/40 text-[11px] uppercase tracking-wide text-muted-foreground">
                     <tr>
                       <th className="px-3 py-2 text-left">Medicine</th>
@@ -416,7 +416,7 @@ export default function ConsultationPage() {
                   <tbody>
                     {form.prescriptions.map((r, i) => (
                       <tr key={i} className="border-b last:border-0">
-                        <td className="px-3 py-2">
+                        <td className="min-w-60 px-3 py-2">
                           <Input
                             list="med-catalogue"
                             disabled={readOnly}

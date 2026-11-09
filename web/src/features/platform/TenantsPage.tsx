@@ -49,8 +49,20 @@ interface TenantDetail extends TenantRow {
   phone: string | null;
 }
 const ALL_MODULES = ['patients', 'appointments', 'opd', 'billing', 'pharmacy', 'lab', 'ipd', 'reports', 'communication', 'portal'];
+const MODULE_LABEL: Record<string, string> = {
+  patients: 'Patients',
+  appointments: 'Appointments',
+  opd: 'OPD / EMR',
+  billing: 'Billing',
+  pharmacy: 'Pharmacy',
+  lab: 'Laboratory',
+  ipd: 'In-patient (IPD)',
+  reports: 'Reports',
+  communication: 'Messaging',
+  portal: 'Patient portal',
+};
 
-function TenantSheet({ id, onClose, plans }: { id: number | null; onClose: () => void; plans: Plan[] }) {
+function TenantSheet({ id, row, onClose, plans }: { id: number | null; row?: TenantRow; onClose: () => void; plans: Plan[] }) {
   const qc = useQueryClient();
   const f = useFmt();
   const { data: t } = useQuery({ queryKey: ['tenant', id], queryFn: () => api.get<TenantDetail>(`/platform/tenants/${id}`), enabled: Boolean(id) });
@@ -129,7 +141,7 @@ function TenantSheet({ id, onClose, plans }: { id: number | null; onClose: () =>
                   const overridden = over.enable.includes(m) || over.disable.includes(m);
                   return (
                     <button key={m} onClick={() => cycle(m)} className={`flex cursor-pointer items-center justify-between rounded-lg border px-3 py-2 text-left text-sm transition ${on ? 'border-primary/40 bg-primary/8' : 'opacity-60'}`}>
-                      {titleCase(m)}
+                      {MODULE_LABEL[m] ?? titleCase(m)}
                       <span className="flex gap-1">
                         {overridden ? <Badge variant="warning">Override</Badge> : null}
                         <Badge variant={on ? 'success' : 'muted'}>{on ? 'On' : 'Off'}</Badge>
@@ -144,8 +156,10 @@ function TenantSheet({ id, onClose, plans }: { id: number | null; onClose: () =>
             </div>
             <div className="grid grid-cols-2 gap-3 text-sm">
               <Card className="p-3">
-                <p className="text-xs text-muted-foreground">Users</p>
-                <p className="text-xl font-semibold">{t.userCount ?? '—'}</p>
+                <p className="text-xs text-muted-foreground">Users · patients</p>
+                <p className="text-xl font-semibold">
+                  {row?.userCount ?? '—'} · {row?.patientCount ?? '—'}
+                </p>
               </Card>
               <Card className="p-3">
                 <p className="text-xs text-muted-foreground">Contact</p>
@@ -308,7 +322,7 @@ export default function TenantsPage() {
         />
         {data ? <Pagination page={page} pageSize={data.pageSize} total={data.total} onPage={setPage} /> : null}
       </Card>
-      <TenantSheet id={openId} onClose={() => setOpenId(null)} plans={plans.data ?? []} />
+      <TenantSheet id={openId} row={data?.data.find((r) => r.id === openId)} onClose={() => setOpenId(null)} plans={plans.data ?? []} />
       <NewTenantDialog open={params.get('new') === '1'} onOpenChange={(o) => !o && setParams({})} plans={plans.data ?? []} />
     </>
   );
