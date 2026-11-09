@@ -1,0 +1,306 @@
+[
+  {
+    "who": "admin",
+    "page": "dashboard",
+    "path": "/dashboard",
+    "ok": true,
+    "heading": "Good afternoon, Ritika",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "patients",
+    "path": "/patients",
+    "ok": true,
+    "heading": "Patients",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "patient-detail",
+    "path": "/patients/1",
+    "ok": true,
+    "heading": "Sanjay Yadav",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "appointments",
+    "path": "/appointments",
+    "ok": true,
+    "heading": "Appointments",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "billing",
+    "path": "/billing",
+    "ok": true,
+    "heading": "Billing",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "pharmacy-stock",
+    "path": "/pharmacy/stock",
+    "ok": true,
+    "heading": "Pharmacy",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "lab",
+    "path": "/lab",
+    "ok": true,
+    "heading": "Laboratory",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "ipd",
+    "path": "/ipd",
+    "ok": true,
+    "heading": "In-Patient",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "reports",
+    "path": "/reports",
+    "ok": true,
+    "heading": "Reports & analytics",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "masters",
+    "path": "/masters",
+    "ok": true,
+    "heading": "Masters",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "users",
+    "path": "/users",
+    "ok": true,
+    "heading": "Users & roles",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "settings",
+    "path": "/settings",
+    "ok": true,
+    "heading": "Settings",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "audit",
+    "path": "/audit",
+    "ok": true,
+    "heading": "Audit trail",
+    "errors": []
+  },
+  {
+    "who": "admin",
+    "page": "messages",
+    "path": "/messages",
+    "ok": true,
+    "heading": "Messages",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "consultation",
+    "path": "/opd/1",
+    "ok": true,
+    "heading": "",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "booking-dialog",
+    "path": "/appointments?book=1",
+    "ok": true,
+    "heading": "Appointments",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "lab-order",
+    "path": "/lab/orders/4",
+    "ok": true,
+    "heading": "",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "admission",
+    "path": "/ipd/admissions/1",
+    "ok": true,
+    "heading": "Ishaan Nair",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "invoice",
+    "path": "/billing/invoices/1",
+    "ok": true,
+    "heading": "INV-000001",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "print-rx",
+    "path": "/print/prescription/1",
+    "ok": true,
+    "heading": "",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "print-invoice",
+    "path": "/print/invoice/1",
+    "ok": true,
+    "heading": "",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "print-lab",
+    "path": "/print/lab/4",
+    "ok": true,
+    "heading": "",
+    "errors": []
+  },
+  {
+    "who": "detail",
+    "page": "print-discharge",
+    "path": "/print/discharge/1",
+    "ok": true,
+    "heading": "",
+    "errors": []
+  },
+  {
+    "who": "doctor",
+    "page": "dashboard",
+    "path": "/dashboard",
+    "ok": true,
+    "heading": "Good afternoon, Dr.",
+    "errors": []
+  },
+  {
+    "who": "doctor",
+    "page": "queue",
+    "path": "/appointments",
+    "ok": true,
+    "heading": "Appointments",
+    "errors": []
+  },
+  {
+    "who": "doctor",
+    "page": "opd-list",
+    "path": "/opd",
+    "ok": true,
+    "heading": "Consultations",
+    "errors": []
+  },
+  {
+    "who": "admin-dark",
+    "page": "dashboard",
+    "path": "/dashboard",
+    "ok": true,
+    "heading": "Good afternoon, Ritika",
+    "errors": []
+  },
+  {
+    "who": "admin-dark",
+    "page": "ipd",
+    "path": "/ipd",
+    "ok": true,
+    "heading": "In-Patient",
+    "errors": []
+  },
+  {
+    "who": "mobile",
+    "page": "appointments",
+    "path": "/appointments",
+    "ok": true,
+    "heading": "Appointments",
+    "errors": []
+  },
+  {
+    "who": "mobile",
+    "page": "patients",
+    "path": "/patients",
+    "ok": true,
+    "heading": "Patients",
+    "errors": []
+  },
+  {
+    "who": "patient",
+    "page": "home",
+    "path": "/portal",
+    "ok": true,
+    "heading": "Sanjay Yadav",
+    "errors": []
+  },
+  {
+    "who": "patient",
+    "page": "book",
+    "path": "/portal/book",
+    "ok": true,
+    "heading": "Book an appointment",
+    "errors": []
+  },
+  {
+    "who": "patient",
+    "page": "records",
+    "path": "/portal/records",
+    "ok": true,
+    "heading": "My records",
+    "errors": []
+  },
+  {
+    "who": "owner",
+    "page": "overview",
+    "path": "/platform",
+    "ok": true,
+    "heading": "Platform overview",
+    "errors": []
+  },
+  {
+    "who": "owner",
+    "page": "tenants",
+    "path": "/platform/tenants",
+    "ok": true,
+    "heading": "Organisations",
+    "errors": []
+  },
+  {
+    "who": "owner",
+    "page": "plans",
+    "path": "/platform/plans",
+    "ok": true,
+    "heading": "Plans & modules",
+    "errors": []
+  },
+  {
+    "who": "carewell",
+    "page": "dashboard",
+    "path": "/dashboard",
+    "ok": true,
+    "heading": "Good afternoon, Dr.",
+    "errors": []
+  },
+  {
+    "who": "carewell",
+    "page": "blocked-pharmacy",
+    "path": "/pharmacy",
+    "ok": true,
+    "heading": "",
+    "errors": []
+  }
+]

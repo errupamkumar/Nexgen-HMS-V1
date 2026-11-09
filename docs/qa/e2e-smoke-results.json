@@ -1,0 +1,114 @@
+{
+  "base": "http://localhost:4300",
+  "at": "2026-11-09T11:01:17.515Z",
+  "results": [
+    {
+      "step": "Web app serves the SPA shell",
+      "ok": true,
+      "ms": 9,
+      "detail": ""
+    },
+    {
+      "step": "Reception registers a patient (custom fields)",
+      "ok": true,
+      "ms": 24,
+      "detail": "UH-000049"
+    },
+    {
+      "step": "Reception books a future slot with Dr. Rajesh Sharma",
+      "ok": true,
+      "ms": 118,
+      "detail": "AP-000218 token 1 fee 1000"
+    },
+    {
+      "step": "Walk-in for today, auto-invoiced with registration fee",
+      "ok": true,
+      "ms": 28,
+      "detail": "AP-000219 invoice INV-000196"
+    },
+    {
+      "step": "Reception collects the consultation fee",
+      "ok": true,
+      "ms": 31,
+      "detail": "RCT-000189 → paid"
+    },
+    {
+      "step": "Doctor starts consultation from the queue",
+      "ok": true,
+      "ms": 22,
+      "detail": ""
+    },
+    {
+      "step": "Doctor records vitals, history, diagnosis and prescription",
+      "ok": true,
+      "ms": 62,
+      "detail": "BMI 28.12"
+    },
+    {
+      "step": "Doctor orders lab tests from the consultation",
+      "ok": true,
+      "ms": 47,
+      "detail": "LAB-000009"
+    },
+    {
+      "step": "Doctor finalises (appointment completed, record locked)",
+      "ok": true,
+      "ms": 36,
+      "detail": ""
+    },
+    {
+      "step": "Pharmacist dispenses the prescription (FEFO + bill + payment)",
+      "ok": true,
+      "ms": 69,
+      "detail": "INV-000198 total 56 → paid"
+    },
+    {
+      "step": "Lab collects sample, enters results, verifies",
+      "ok": true,
+      "ms": 82,
+      "detail": "Total Cholesterol:H Triglycerides:H HDL:L LDL:H"
+    },
+    {
+      "step": "Admit to an available bed with deposit",
+      "ok": true,
+      "ms": 69,
+      "detail": "IP-000006 bed GA-03"
+    },
+    {
+      "step": "Nursing note + service charge on running bill",
+      "ok": true,
+      "ms": 45,
+      "detail": ""
+    },
+    {
+      "step": "Discharge bills bed-days and issues the final bill",
+      "ok": true,
+      "ms": 30,
+      "detail": "1 bed-day(s), total 1500, status paid"
+    },
+    {
+      "step": "Patient timeline shows every touchpoint",
+      "ok": true,
+      "ms": 22,
+      "detail": "appts 2, encounters 1, labs 1, invoices 5, admissions 1"
+    },
+    {
+      "step": "Admin grants portal access; patient sees own records",
+      "ok": true,
+      "ms": 338,
+      "detail": "1 Rx, 1 lab reports, 5 bills"
+    },
+    {
+      "step": "Dashboard and reports reflect the activity",
+      "ok": true,
+      "ms": 39,
+      "detail": "today 38326, 30-day net 161626, occupancy 21%"
+    },
+    {
+      "step": "Audit trail captured the journey",
+      "ok": true,
+      "ms": 8,
+      "detail": "24 events"
+    }
+  ]
+}

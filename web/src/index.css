@@ -1,0 +1,115 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design tokens (shadcn/ui convention). `--brand` is overwritten at runtime with
+ * the tenant's configured colour, so every organisation gets its own theme.
+ */
+:root {
+  --brand: #0d9488;
+  --brand-foreground: #ffffff;
+  --radius: 0.75rem;
+  --background: oklch(0.985 0.002 247);
+  --foreground: oklch(0.21 0.03 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.03 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.03 265);
+  --primary: var(--brand);
+  --primary-foreground: var(--brand-foreground);
+  --secondary: oklch(0.967 0.003 265);
+  --secondary-foreground: oklch(0.21 0.03 265);
+  --muted: oklch(0.967 0.003 265);
+  --muted-foreground: oklch(0.55 0.02 265);
+  --accent: oklch(0.955 0.006 265);
+  --accent-foreground: oklch(0.21 0.03 265);
+  --destructive: oklch(0.58 0.22 27);
+  --border: oklch(0.92 0.006 265);
+  --input: oklch(0.9 0.008 265);
+  --ring: var(--brand);
+  --sidebar: oklch(0.995 0.001 265);
+  --success: oklch(0.6 0.15 155);
+  --warning: oklch(0.75 0.16 75);
+  --info: oklch(0.62 0.16 245);
+}
+
+.dark {
+  --background: oklch(0.16 0.015 265);
+  --foreground: oklch(0.96 0.005 265);
+  --card: oklch(0.2 0.018 265);
+  --card-foreground: oklch(0.96 0.005 265);
+  --popover: oklch(0.21 0.018 265);
+  --popover-foreground: oklch(0.96 0.005 265);
+  --secondary: oklch(0.27 0.02 265);
+  --secondary-foreground: oklch(0.96 0.005 265);
+  --muted: oklch(0.26 0.018 265);
+  --muted-foreground: oklch(0.7 0.015 265);
+  --accent: oklch(0.28 0.02 265);
+  --accent-foreground: oklch(0.96 0.005 265);
+  --destructive: oklch(0.65 0.2 25);
+  --border: oklch(0.3 0.02 265);
+  --input: oklch(0.32 0.02 265);
+  --sidebar: oklch(0.18 0.016 265);
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-info: var(--info);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { -webkit-font-smoothing: antialiased; }
+  body { @apply bg-background text-foreground font-sans; font-feature-settings: "cv11", "ss01"; }
+  ::selection { background: color-mix(in oklab, var(--brand) 25%, transparent); }
+}
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--muted-foreground) 35%, transparent) transparent;
+}
+
+/* Decorative brand mesh used on auth screens and hero cards */
+.brand-mesh {
+  background:
+    radial-gradient(60rem 30rem at 10% -10%, color-mix(in oklab, var(--brand) 55%, transparent), transparent 60%),
+    radial-gradient(40rem 30rem at 110% 10%, color-mix(in oklab, var(--brand) 35%, #6366f1 30%), transparent 60%),
+    radial-gradient(50rem 40rem at 50% 120%, color-mix(in oklab, var(--brand) 40%, #0ea5e9 20%), transparent 60%),
+    oklch(0.2 0.03 265);
+}
+
+/* Print: only the printable document */
+@media print {
+  @page { margin: 12mm; }
+  body { background: white !important; }
+  .no-print { display: none !important; }
+  .print-area { box-shadow: none !important; border: none !important; margin: 0 !important; max-width: none !important; }
+}
